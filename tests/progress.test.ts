@@ -3,7 +3,7 @@ import { LEVELS, ZONES } from '../src/application/catalog';
 import { completeDaily, completeLevel, dailyLevel, newProgress, pickNextLevel, skipLevel, starsFor } from '../src/application/progress';
 
 const random = () => 0.5;
-const perfect = (par: number) => ({ moves: par, falls: 0, hinted: false });
+const perfect = (par: number) => ({ moves: par, falls: 0, restarts: 0, hinted: false });
 
 describe('stars', () => {
   it('rewards par with three, slack with two, hints cap at two', () => {
@@ -17,27 +17,28 @@ describe('stars', () => {
 describe('progression', () => {
   it('flags near misses so the retry prompt can fire', () => {
     const level = LEVELS[0];
-    const { rewards } = completeLevel(newProgress(), level, { moves: level.par + 1, falls: 0, hinted: false }, random);
+    const { rewards } = completeLevel(newProgress(), level, { moves: level.par + 1, falls: 0, restarts: 0, hinted: false }, random);
     expect(rewards.nearMiss).toEqual({ movesOff: 1 });
   });
 
   it('never lowers a best score', () => {
     const level = LEVELS[0];
     const first = completeLevel(newProgress(), level, perfect(level.par), random).progress;
-    const second = completeLevel(first, level, { moves: level.par + 9, falls: 0, hinted: false }, random).progress;
+    const second = completeLevel(first, level, { moves: level.par + 9, falls: 0, restarts: 0, hinted: false }, random).progress;
     expect(second.best[level.id].stars).toBe(3);
   });
 
   it('opens a chest after enough stars and grants a new skin', () => {
     let progress = newProgress();
     let chests = 0;
-    for (const level of LEVELS.slice(0, 2)) {
+    for (const level of LEVELS.slice(0, 4)) {
       const result = completeLevel(progress, level, perfect(level.par), random);
       progress = result.progress;
       if (result.rewards.chest) chests++;
     }
     expect(chests).toBe(1);
     expect(progress.skins.length).toBe(2);
+    expect(progress.skin).toBe('classic'); // wearing it is the player's choice
   });
 
   it('walks a perfect player through every zone without repeating levels', () => {
@@ -66,7 +67,7 @@ describe('progression', () => {
       const level = pickNextLevel(progress);
       expect(progress.recent.at(-1)).not.toBe(level.id);
       const moves = played % 2 ? level.par : level.par + 1;
-      progress = completeLevel(progress, level, { moves, falls: 0, hinted: false }, random).progress;
+      progress = completeLevel(progress, level, { moves, falls: 0, restarts: 0, hinted: false }, random).progress;
     }
   });
 
@@ -74,6 +75,24 @@ describe('progression', () => {
     const progress = newProgress();
     const level = pickNextLevel(progress);
     expect(pickNextLevel(skipLevel(progress, level)).id).not.toBe(level.id);
+  });
+
+  it('plans an easier level every fourth clear, even for a player doing fine', () => {
+    const before = { ...newProgress(), zone: 3, clearedInZone: 6 };
+    const breather = { ...before, clearedInZone: 7 };
+    expect(pickNextLevel(breather).difficulty).toBeLessThan(pickNextLevel(before).difficulty);
+  });
+
+  it('counts repeated restarts as struggling', () => {
+    const level = LEVELS[0];
+    const attempt = { moves: level.par, falls: 0, restarts: 2, hinted: false };
+    expect(completeLevel(newProgress(), level, attempt, random).progress.struggles).toBe(1);
+  });
+
+  it('skips the planned easy level for a player on a perfect run', () => {
+    const due = { ...newProgress(), zone: 3, clearedInZone: 7 };
+    const onARoll = { ...due, perfectStreak: 3 };
+    expect(pickNextLevel(onARoll).difficulty).toBeGreaterThan(pickNextLevel(due).difficulty);
   });
 
   it('serves easier levels after repeated struggles', () => {

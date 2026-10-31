@@ -5,8 +5,8 @@ import type { Attempt } from './progress';
 
 /** One player's run at one level. Shared by the real game and the playtest bots. */
 export class LevelSession {
-  private history: GameState[] = [];
   state: GameState;
+  moves = 0;
   falls = 0;
   restarts = 0;
   hinted = false;
@@ -16,37 +16,32 @@ export class LevelSession {
     this.state = initialState(board);
   }
 
-  get moves() {
-    return this.history.length;
-  }
-
   get attempt(): Attempt {
-    return { moves: this.moves, falls: this.falls, hinted: this.hinted };
+    return { moves: this.moves, falls: this.falls, restarts: this.restarts, hinted: this.hinted };
   }
 
   dash(direction: Direction): DashResult {
     const result = dash(this.board, this.state, direction);
-    // A fall leaves state untouched: the dash is rewound, only the fall is remembered.
-    if (result.outcome === 'fell') this.falls++;
-    else if (result.outcome !== 'blocked') {
-      this.history.push(this.state);
+    if (result.outcome === 'fell') {
+      this.falls++;
+      this.reset();
+    } else if (result.outcome !== 'blocked') {
+      this.moves++;
       this.state = result.state;
       this.won = result.outcome === 'won';
     }
     return result;
   }
 
-  undo() {
-    const previous = this.history.pop();
-    if (previous) this.state = previous;
-    return !!previous;
+  restart() {
+    this.reset();
+    this.restarts++;
   }
 
-  restart() {
-    this.history = [];
+  private reset() {
+    this.moves = 0;
     this.state = initialState(this.board);
     this.won = false;
-    this.restarts++;
   }
 
   /** True when no sequence of dashes can win from here (a crumble burned the only way through). */
@@ -57,6 +52,7 @@ export class LevelSession {
   /** Next dash on a shortest route. Taking one caps the level at two stars. */
   hint(): Direction | null {
     this.hinted = true;
+    if (this.won) return null;
     return solve(this.board, { from: this.state })?.[0] ?? null;
   }
 }

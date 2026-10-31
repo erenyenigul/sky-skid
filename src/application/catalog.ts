@@ -19,11 +19,11 @@ export interface Zone {
 }
 
 export const ZONES: readonly Zone[] = [
-  { name: 'First Sparks', tip: 'Swipe or use arrows. You dash until something stops you. Grab every coin, then reach the flag.', quota: 7 },
-  { name: 'Windy Gaps', tip: 'New: gaps! Dash over the edge and you drop. No harm done, you rewind one move.', quota: 8 },
-  { name: 'Tall Grass', tip: 'New: tall grass stops you dead. Use it to brake exactly where you need to.', quota: 8 },
-  { name: 'Crumble Ridge', tip: 'New: crumbling platforms hold once. Cross one twice and down you go.', quota: 8 },
-  { name: 'Cloud Hop', tip: 'New: clouds come in pairs. Touch one and you pop out of the other.', quota: 8 },
+  { name: 'First Sparks', tip: 'Swipe or use arrows. You dash until something stops you. Grab every coin, then reach the flag.', quota: 10 },
+  { name: 'Windy Gaps', tip: 'New: gaps! Dash into one and you drop, then the level starts over. Look before you dash.', quota: 12 },
+  { name: 'Tall Grass', tip: 'New: tall grass stops you dead. Use it to brake exactly where you need to.', quota: 12 },
+  { name: 'Crumble Ridge', tip: 'New: crumbling platforms hold once. Cross one twice and down you go.', quota: 12 },
+  { name: 'Cloud Hop', tip: 'New: clouds come in pairs. Touch one and you pop out of the other.', quota: 12 },
   { name: 'The High Sky', tip: 'Everything at once. No more new rules. How far can you climb?', quota: Infinity },
 ];
 

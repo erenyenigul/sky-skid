@@ -1,5 +1,5 @@
 {
- "levels": 147,
+ "levels": 247,
  "failures": [],
  "report": [
   {
@@ -141,7 +141,7 @@
    "id": "z1-1",
    "zone": 1,
    "par": 6,
-   "witness": "left down right up down left",
+   "witness": "left down up right down left",
    "required": {},
    "requiredBound": 14,
    "hazardReachable": true
@@ -303,7 +303,7 @@
    "id": "z2-1",
    "zone": 2,
    "par": 8,
-   "witness": "left left down left up right right right",
+   "witness": "left down left down up right right right",
    "required": {
     "grass": true
    },
@@ -325,7 +325,7 @@
    "id": "z2-3",
    "zone": 2,
    "par": 5,
-   "witness": "left down right up left",
+   "witness": "left down up right left",
    "required": {
     "grass": true
    },
@@ -578,7 +578,7 @@
    "id": "z3-8",
    "zone": 3,
    "par": 7,
-   "witness": "right down left left up right down",
+   "witness": "down right left left up right down",
    "required": {
     "crumble": true
    },
@@ -699,7 +699,7 @@
    "id": "z4-1",
    "zone": 4,
    "par": 8,
-   "witness": "right down up left right right down down",
+   "witness": "down right up left right right down down",
    "required": {
     "cloud": true
    },
@@ -743,7 +743,7 @@
    "id": "z4-5",
    "zone": 4,
    "par": 7,
-   "witness": "up right up down down right up",
+   "witness": "up right left right down right up",
    "required": {
     "cloud": true
    },
@@ -765,7 +765,7 @@
    "id": "z4-7",
    "zone": 4,
    "par": 9,
-   "witness": "down down left right left up right up left",
+   "witness": "down down up right right up right up left",
    "required": {
     "cloud": true
    },
@@ -945,7 +945,7 @@
    "id": "z5-5",
    "zone": 5,
    "par": 12,
-   "witness": "down right up down right up left down up left up right",
+   "witness": "down right up down right left down up up left up right",
    "required": {
     "cloud": true,
     "crumble": true
@@ -957,7 +957,7 @@
    "id": "z5-6",
    "zone": 5,
    "par": 12,
-   "witness": "right up left down left up down left right up right down",
+   "witness": "right up left down left down up left right up right down",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1029,7 +1029,7 @@
    "id": "z5-12",
    "zone": 5,
    "par": 11,
-   "witness": "right up left down up left left right left right up",
+   "witness": "right up left down up left left right right up right",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1137,7 +1137,7 @@
    "id": "z5-21",
    "zone": 5,
    "par": 14,
-   "witness": "up left right up down left left up right up right down right down",
+   "witness": "down right up right down left left up right up right down right down",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1161,7 +1161,7 @@
    "id": "z5-23",
    "zone": 5,
    "par": 13,
-   "witness": "right up left down left up right up down down right left down",
+   "witness": "right up left down left up right left right down right left down",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1209,7 +1209,7 @@
    "id": "z5-27",
    "zone": 5,
    "par": 9,
-   "witness": "right up up left down left right up right",
+   "witness": "left right up up left down right up right",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1245,7 +1245,7 @@
    "id": "z5-30",
    "zone": 5,
    "par": 13,
-   "witness": "up right down left up right left left down right up left down",
+   "witness": "up right down left up left right left down right up left down",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1269,7 +1269,7 @@
    "id": "z5-32",
    "zone": 5,
    "par": 10,
-   "witness": "left right left up down down up down up left",
+   "witness": "left down up up down right left down up left",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1389,7 +1389,7 @@
    "id": "z5-42",
    "zone": 5,
    "par": 14,
-   "witness": "up right left right down up left right down left down right up left",
+   "witness": "up right down left down right left right down up left right up left",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1413,7 +1413,7 @@
    "id": "z5-44",
    "zone": 5,
    "par": 14,
-   "witness": "left down down right left up right down right up left left up right",
+   "witness": "left down right down right up left left down right left up up right",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1425,7 +1425,7 @@
    "id": "z5-45",
    "zone": 5,
    "par": 13,
-   "witness": "down left up left right left right up left down down up up",
+   "witness": "down left up left right down up up left down down up up",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1485,7 +1485,7 @@
    "id": "z5-50",
    "zone": 5,
    "par": 8,
-   "witness": "left down right left up right down right",
+   "witness": "down left right left up right down right",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1509,7 +1509,7 @@
    "id": "z5-52",
    "zone": 5,
    "par": 13,
-   "witness": "right down right left up right down left left down right up right",
+   "witness": "right up right down left left down right down right left up right",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1581,7 +1581,7 @@
    "id": "z5-58",
    "zone": 5,
    "par": 14,
-   "witness": "down right up left up up up right up left down up right up",
+   "witness": "down right up left up up up right up left down down up right",
    "required": {
     "cloud": true,
     "crumble": true
@@ -1605,12 +1605,1131 @@
    "id": "z5-60",
    "zone": 5,
    "par": 14,
-   "witness": "left up left down up down right down left down left down right right",
+   "witness": "left up left left right down right down left down left down right right",
    "required": {
     "cloud": true,
     "crumble": true
    },
    "requiredBound": 22,
+   "hazardReachable": null
+  },
+  {
+   "id": "z0-13",
+   "zone": 0,
+   "par": 3,
+   "witness": "left down right",
+   "required": {},
+   "requiredBound": 11,
+   "hazardReachable": null
+  },
+  {
+   "id": "z0-14",
+   "zone": 0,
+   "par": 3,
+   "witness": "left right up",
+   "required": {},
+   "requiredBound": 11,
+   "hazardReachable": null
+  },
+  {
+   "id": "z0-15",
+   "zone": 0,
+   "par": 3,
+   "witness": "right up left",
+   "required": {},
+   "requiredBound": 11,
+   "hazardReachable": null
+  },
+  {
+   "id": "z0-16",
+   "zone": 0,
+   "par": 2,
+   "witness": "left up",
+   "required": {},
+   "requiredBound": 10,
+   "hazardReachable": null
+  },
+  {
+   "id": "z0-17",
+   "zone": 0,
+   "par": 3,
+   "witness": "up right down",
+   "required": {},
+   "requiredBound": 11,
+   "hazardReachable": null
+  },
+  {
+   "id": "z0-18",
+   "zone": 0,
+   "par": 2,
+   "witness": "up right",
+   "required": {},
+   "requiredBound": 10,
+   "hazardReachable": null
+  },
+  {
+   "id": "z1-19",
+   "zone": 1,
+   "par": 7,
+   "witness": "left right down right left down right",
+   "required": {},
+   "requiredBound": 15,
+   "hazardReachable": true
+  },
+  {
+   "id": "z1-20",
+   "zone": 1,
+   "par": 6,
+   "witness": "up down left up right left",
+   "required": {},
+   "requiredBound": 14,
+   "hazardReachable": true
+  },
+  {
+   "id": "z1-21",
+   "zone": 1,
+   "par": 6,
+   "witness": "up left down right up left",
+   "required": {},
+   "requiredBound": 14,
+   "hazardReachable": true
+  },
+  {
+   "id": "z2-19",
+   "zone": 2,
+   "par": 7,
+   "witness": "down left right up left up right",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 15,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-20",
+   "zone": 2,
+   "par": 7,
+   "witness": "down right up down right down up",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 15,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-21",
+   "zone": 2,
+   "par": 8,
+   "witness": "down left down right up right down right",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-22",
+   "zone": 2,
+   "par": 8,
+   "witness": "down left up right down down up right",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-23",
+   "zone": 2,
+   "par": 8,
+   "witness": "right right up left left right up right",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-24",
+   "zone": 2,
+   "par": 8,
+   "witness": "right down left down right right up right",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-25",
+   "zone": 2,
+   "par": 8,
+   "witness": "down right up left up left down up",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-26",
+   "zone": 2,
+   "par": 7,
+   "witness": "right down left right right down left",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 15,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-27",
+   "zone": 2,
+   "par": 8,
+   "witness": "down right up left left up left down",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-28",
+   "zone": 2,
+   "par": 7,
+   "witness": "left right right down left up right",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 15,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-29",
+   "zone": 2,
+   "par": 8,
+   "witness": "up down left up right left down right",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-30",
+   "zone": 2,
+   "par": 7,
+   "witness": "down right down up right up left",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 15,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-31",
+   "zone": 2,
+   "par": 7,
+   "witness": "down down right up right left down",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 15,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-32",
+   "zone": 2,
+   "par": 8,
+   "witness": "right up left up down left up left",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-33",
+   "zone": 2,
+   "par": 7,
+   "witness": "right down left up up down down",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 15,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-34",
+   "zone": 2,
+   "par": 6,
+   "witness": "up right down right left left",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 14,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-35",
+   "zone": 2,
+   "par": 8,
+   "witness": "right up down left down left up down",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z2-36",
+   "zone": 2,
+   "par": 8,
+   "witness": "up left down down right up left down",
+   "required": {
+    "grass": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-19",
+   "zone": 3,
+   "par": 6,
+   "witness": "down right up down left up",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 14,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-20",
+   "zone": 3,
+   "par": 6,
+   "witness": "left down right down left down",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 14,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-21",
+   "zone": 3,
+   "par": 6,
+   "witness": "left up right down left up",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 14,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-22",
+   "zone": 3,
+   "par": 7,
+   "witness": "down down right up left up right",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 15,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-23",
+   "zone": 3,
+   "par": 8,
+   "witness": "left down right up right down left up",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-24",
+   "zone": 3,
+   "par": 8,
+   "witness": "up left right down right right down left",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-25",
+   "zone": 3,
+   "par": 8,
+   "witness": "up right down left down right down up",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-26",
+   "zone": 3,
+   "par": 6,
+   "witness": "left up right left down right",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 14,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-27",
+   "zone": 3,
+   "par": 9,
+   "witness": "right down left up left down left down right",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-28",
+   "zone": 3,
+   "par": 9,
+   "witness": "down left right up left up left down right",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-29",
+   "zone": 3,
+   "par": 9,
+   "witness": "up right down left down left up left down",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-30",
+   "zone": 3,
+   "par": 6,
+   "witness": "left down left up right down",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 14,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-31",
+   "zone": 3,
+   "par": 5,
+   "witness": "up down right up down",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 13,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-32",
+   "zone": 3,
+   "par": 8,
+   "witness": "right up left down right left up right",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-33",
+   "zone": 3,
+   "par": 9,
+   "witness": "left down left up right up left up right",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-34",
+   "zone": 3,
+   "par": 8,
+   "witness": "right down right up left down right up",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-35",
+   "zone": 3,
+   "par": 8,
+   "witness": "right up right down left up left right",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z3-36",
+   "zone": 3,
+   "par": 8,
+   "witness": "right up right up left down up right",
+   "required": {
+    "crumble": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-19",
+   "zone": 4,
+   "par": 9,
+   "witness": "left down down up right down up left down",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-20",
+   "zone": 4,
+   "par": 8,
+   "witness": "right left right right up left down right",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-21",
+   "zone": 4,
+   "par": 9,
+   "witness": "left right left down up down up left up",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-22",
+   "zone": 4,
+   "par": 9,
+   "witness": "up right left up right down left up down",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-23",
+   "zone": 4,
+   "par": 8,
+   "witness": "right down left right left up right up",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-24",
+   "zone": 4,
+   "par": 6,
+   "witness": "left up right up left down",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 14,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-25",
+   "zone": 4,
+   "par": 9,
+   "witness": "right up left left up up down up right",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-26",
+   "zone": 4,
+   "par": 9,
+   "witness": "left down down up right up left up left",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-27",
+   "zone": 4,
+   "par": 9,
+   "witness": "right right left up down left up left up",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-28",
+   "zone": 4,
+   "par": 9,
+   "witness": "up left down left down left right right up",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-29",
+   "zone": 4,
+   "par": 6,
+   "witness": "left up up left down left",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 14,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-30",
+   "zone": 4,
+   "par": 7,
+   "witness": "up right down right up left up",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 15,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-31",
+   "zone": 4,
+   "par": 8,
+   "witness": "left left down right up right left up",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-32",
+   "zone": 4,
+   "par": 8,
+   "witness": "up left right down right up down left",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-33",
+   "zone": 4,
+   "par": 6,
+   "witness": "down right down right down left",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 14,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-34",
+   "zone": 4,
+   "par": 9,
+   "witness": "up right left down right right up right up",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-35",
+   "zone": 4,
+   "par": 7,
+   "witness": "down left up up left up down",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 15,
+   "hazardReachable": null
+  },
+  {
+   "id": "z4-36",
+   "zone": 4,
+   "par": 9,
+   "witness": "right up left down right left up right down",
+   "required": {
+    "cloud": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-61",
+   "zone": 5,
+   "par": 12,
+   "witness": "left up down right down left up down left up right down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 20,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-62",
+   "zone": 5,
+   "par": 12,
+   "witness": "right up left up left down left down left right right up",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 20,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-63",
+   "zone": 5,
+   "par": 13,
+   "witness": "left down left right up right down right up up down left down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 21,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-64",
+   "zone": 5,
+   "par": 13,
+   "witness": "right down left right down up up left up down left up down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 21,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-65",
+   "zone": 5,
+   "par": 12,
+   "witness": "right up left up right left down left right right down right",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 20,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-66",
+   "zone": 5,
+   "par": 13,
+   "witness": "right up down left left right up down down left up up down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 21,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-67",
+   "zone": 5,
+   "par": 14,
+   "witness": "up left left up right up right down up left left right up down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 22,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-68",
+   "zone": 5,
+   "par": 10,
+   "witness": "up right left left up right down left down left",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 18,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-69",
+   "zone": 5,
+   "par": 12,
+   "witness": "left down up right down right up right up left down up",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 20,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-70",
+   "zone": 5,
+   "par": 14,
+   "witness": "right up left up right down left left right left right left left down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 22,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-71",
+   "zone": 5,
+   "par": 12,
+   "witness": "right down right up left down left down right right up left",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 20,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-72",
+   "zone": 5,
+   "par": 11,
+   "witness": "left right down up left left down up right left down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 19,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-73",
+   "zone": 5,
+   "par": 13,
+   "witness": "right down left up right down down down right up left down up",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 21,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-74",
+   "zone": 5,
+   "par": 12,
+   "witness": "right left up right up left down right left right up right",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 20,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-75",
+   "zone": 5,
+   "par": 10,
+   "witness": "right down left up right left right left left down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 18,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-76",
+   "zone": 5,
+   "par": 13,
+   "witness": "down up left up right down right left right left down left down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 21,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-77",
+   "zone": 5,
+   "par": 9,
+   "witness": "up right down left up right up right down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-78",
+   "zone": 5,
+   "par": 14,
+   "witness": "right down up down right down right left down right up up right left",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 22,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-79",
+   "zone": 5,
+   "par": 8,
+   "witness": "right left up down right left down right",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-80",
+   "zone": 5,
+   "par": 14,
+   "witness": "up right left down left down right left right up left down right up",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 22,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-81",
+   "zone": 5,
+   "par": 11,
+   "witness": "down right down up up right up left down left down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 19,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-82",
+   "zone": 5,
+   "par": 9,
+   "witness": "left down right down left up left up up",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 17,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-83",
+   "zone": 5,
+   "par": 10,
+   "witness": "up right down left right left left right right down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 18,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-84",
+   "zone": 5,
+   "par": 13,
+   "witness": "up right down up down left down right down left up right left",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 21,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-85",
+   "zone": 5,
+   "par": 14,
+   "witness": "right down left down right up right right left up left up left left",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 22,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-86",
+   "zone": 5,
+   "par": 11,
+   "witness": "right down left up up up down down up right left",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 19,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-87",
+   "zone": 5,
+   "par": 14,
+   "witness": "right down right down left up left down left right up right right down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 22,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-88",
+   "zone": 5,
+   "par": 14,
+   "witness": "left right up left down left down right up right left right down right",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 22,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-89",
+   "zone": 5,
+   "par": 12,
+   "witness": "up right up up down down down left up right right up",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 20,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-90",
+   "zone": 5,
+   "par": 12,
+   "witness": "left up right down down left up right up left up right",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 20,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-91",
+   "zone": 5,
+   "par": 14,
+   "witness": "up down left down up up left down right up right down left down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 22,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-92",
+   "zone": 5,
+   "par": 11,
+   "witness": "right right left left down right up right up right down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 19,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-93",
+   "zone": 5,
+   "par": 12,
+   "witness": "up right down left down right left down left up right up",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 20,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-94",
+   "zone": 5,
+   "par": 8,
+   "witness": "left left down right up up right down",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 16,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-95",
+   "zone": 5,
+   "par": 10,
+   "witness": "down left left down left left down left down right",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 18,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-96",
+   "zone": 5,
+   "par": 11,
+   "witness": "up left down right down down up left up left up",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 19,
+   "hazardReachable": null
+  },
+  {
+   "id": "z5-97",
+   "zone": 5,
+   "par": 6,
+   "witness": "down right down left right up",
+   "required": {
+    "cloud": true,
+    "crumble": true
+   },
+   "requiredBound": 14,
    "hazardReachable": null
   }
  ]

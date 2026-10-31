@@ -1,10 +1,7 @@
 import { CHEST_STARS, SKINS, starsFor, totalStars, type Rewards } from '../../application/progress';
 import { ZONES } from '../../application/catalog';
-import type { Direction } from '../../domain/game';
 import type { GameController } from '../gameController';
 import * as store from '../store';
-
-const ARROW: Record<Direction, string> = { up: '↑', down: '↓', left: '←', right: '→' };
 
 const Stars = ({ count, size = '' }: { count: number; size?: string }) => (
   <span class={`stars ${size}`} aria-label={`${count} of 3 stars`}>
@@ -22,7 +19,7 @@ const Button = ({ color = 'blue', nudge = false, onClick, children, testId }: { 
 
 function nearMissLine(rewards: Rewards) {
   if (rewards.stars === 3) {
-    return rewards.perfectStreak > 1 ? `Perfect! ${rewards.perfectStreak} in a row` : 'Perfect. Mathematically, it cannot be done in fewer.';
+    return rewards.perfectStreak > 1 ? `Perfect! ${rewards.perfectStreak} in a row` : 'Flawless! Not a single dash wasted.';
   }
   if (!rewards.nearMiss) return 'Cleared. There is a much shorter way...';
   const { movesOff } = rewards.nearMiss;
@@ -62,11 +59,9 @@ function PlayControls({ game }: { game: GameController }) {
   const { hints } = store.progress.value!;
   return (
     <div class="controls">
-      {store.stuck.value && <div class="kenney-panel stuck-note">No way through from here. Undo or restart.</div>}
-      {store.hintDirection.value && <div class="kenney-panel hint-note">Try {ARROW[store.hintDirection.value]}</div>}
       <div class="row">
-        <Button color="grey" onClick={() => game.undo()}>Undo <kbd>Z</kbd></Button>
-        <Button color="grey" onClick={() => game.retry()}>Restart <kbd>R</kbd></Button>
+        <Button color="grey" onClick={() => game.openMenu()} testId="menu">Menu <kbd>Esc</kbd></Button>
+        <Button color={store.stuck.value && !hints ? 'yellow' : 'grey'} nudge={store.stuck.value && !hints} onClick={() => game.retry()}>Restart <kbd>R</kbd></Button>
         <Button color={struggling && hints ? 'yellow' : 'grey'} nudge={struggling && hints > 0} onClick={() => game.useHint()}>Hint ({hints}) <kbd>H</kbd></Button>
         {struggling && !store.isDaily.value && <Button color="grey" onClick={() => game.skip()} testId="skip">Skip</Button>}
       </div>
@@ -77,27 +72,46 @@ function PlayControls({ game }: { game: GameController }) {
 function ClearDialog({ game }: { game: GameController }) {
   const rewards = store.rewards.value!;
   const retryFirst = rewards.stars < 3 && !!rewards.nearMiss;
-  const chest = rewards.chest;
   return (
     <div class="scrim">
       <div class="kenney-panel dialog" data-testid="clear-dialog">
         <Stars count={rewards.stars} size="big" />
         <p>{nearMissLine(rewards)}</p>
         {rewards.newBestStreak && <p class="accent">New best streak!</p>}
-        {chest && (
-          <div class="kenney-panel yellow reward">
-            {chest === 'bonus' ? 'Chest opened: every skin is already yours!' : (
-              <>Chest opened: <b style={{ color: chest.color }} class="outlined">{chest.name}</b> ({chest.rarity})</>
-            )}
-          </div>
-        )}
         {rewards.zoneUnlocked !== null && (
           <div class="kenney-panel green reward">Unlocked {ZONES[rewards.zoneUnlocked].name}. A new rule awaits.</div>
         )}
         <div class="row">
+          <Button color="grey" onClick={() => game.openMenu()}>Menu</Button>
           <Button color={retryFirst ? 'yellow' : 'grey'} nudge={retryFirst} onClick={() => game.retry()}>Retry <kbd>R</kbd></Button>
           <Button color={retryFirst ? 'grey' : 'green'} onClick={() => game.next()} testId="next">Next <kbd>↵</kbd></Button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function ChestReveal({ game }: { game: GameController }) {
+  const chest = store.rewards.value!.chest!;
+  return (
+    <div class="showcase-panel" data-testid="chest">
+      <div class="kenney-panel dialog chest-prize">
+        {chest === 'bonus' ? (
+          <p>Every skin is already yours!</p>
+        ) : (
+          <p>
+            <b>{chest.name}</b> <small class={`rarity ${chest.rarity}`}>{chest.rarity}</small>
+          </p>
+        )}
+        <small>+3 hints</small>
+        {chest === 'bonus' ? (
+          <Button color="green" onClick={() => game.closeChest(false)} testId="chest-continue">Nice! <kbd>↵</kbd></Button>
+        ) : (
+          <div class="row">
+            <Button color="grey" onClick={() => game.closeChest(false)} testId="chest-keep">Keep current <kbd>Esc</kbd></Button>
+            <Button color="green" onClick={() => game.closeChest(true)} testId="chest-wear">Wear it! <kbd>↵</kbd></Button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -131,9 +145,8 @@ function TitleScreen({ game }: { game: GameController }) {
 function SkinsDialog({ game }: { game: GameController }) {
   const progress = store.progress.value!;
   return (
-    <div class="scrim">
+    <div class="showcase-panel" data-testid="skins-dialog">
       <div class="kenney-panel dialog wide">
-        <h2>Skins</h2>
         <div class="skin-grid">
           {SKINS.map((skin) => {
             const owned = progress.skins.includes(skin.id);
@@ -161,9 +174,10 @@ export function Hud({ game }: { game: GameController }) {
   if (!store.progress.value || !store.level.value) return null;
   return (
     <>
-      {screen !== 'title' && screen !== 'skins' && <TopBar />}
+      {(screen === 'play' || screen === 'chest' || screen === 'clear') && <TopBar />}
       {screen === 'play' && <PlayControls game={game} />}
       {screen === 'play' && store.toast.value && <div class="kenney-panel yellow toast">{store.toast.value}</div>}
+      {screen === 'chest' && store.rewards.value?.chest && <ChestReveal game={game} />}
       {screen === 'clear' && store.rewards.value && <ClearDialog game={game} />}
       {screen === 'title' && <TitleScreen game={game} />}
       {screen === 'skins' && <SkinsDialog game={game} />}

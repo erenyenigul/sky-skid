@@ -18,7 +18,7 @@ export type SoundName = keyof typeof SOUNDS;
 const howls = new Map(
   (Object.entries(SOUNDS) as [SoundName, number][]).map(([name, volume]) => [
     name,
-    new Howl({ src: [`/assets/sounds/${name}.ogg`], volume }),
+    new Howl({ src: [`${import.meta.env.BASE_URL}assets/sounds/${name}.ogg`], volume }),
   ]),
 );
 

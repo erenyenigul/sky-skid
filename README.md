@@ -13,7 +13,11 @@ npm run e2e        # browser tests (needs `npx playwright install chromium`)
 
 Regenerating levels: `npm run levels`, then `npm run calibrate`, then `npm run verify`.
 
-Controls: arrows, WASD or swipe. `Z` undo, `R` restart, `H` hint, `Enter` next.
+Controls: arrows, WASD or swipe. `Esc` menu, `R` restart, `H` hint, `Enter` next.
+
+## Publishing to GitHub Pages
+
+`.github/workflows/deploy.yml` tests, builds and publishes the game on every push to `main`. In the repository, set **Settings → Pages → Source** to **GitHub Actions** once. The game then appears at `https://<username>.github.io/<repo>/`.
 
 ## Architecture
 

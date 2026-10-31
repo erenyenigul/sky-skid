@@ -3,6 +3,27 @@ import { color, mix, screenUV } from 'three/tsl';
 import gsap from 'gsap';
 import type { Assets } from './assets';
 
+const BOARD_PITCH = 0.963;
+const FOCUS_PITCH = 0.62;
+const FOCUS_DISTANCE = 10;
+const FOCUS_RISE = 0.3;
+const FOCUS_DROP = 0.7;
+
+interface CameraPose {
+  x: number;
+  y: number;
+  z: number;
+  distance: number;
+  pitch: number;
+}
+
+/** A self-contained scene that can take over the canvas from the level. */
+export interface StageView {
+  readonly scene: THREE.Scene;
+  readonly camera: THREE.Camera;
+  fit(aspect: number): void;
+}
+
 /** Renderer, camera, light and sky. Knows nothing about the game. */
 export class Stage {
   readonly scene = new THREE.Scene();
@@ -12,6 +33,9 @@ export class Stage {
   private readonly tickers: ((delta: number, elapsed: number) => void)[] = [];
   private readonly timer = new THREE.Timer();
   private boardSpan = 6;
+  private view: StageView | null = null;
+  private focused = false;
+  private readonly pose: CameraPose = { x: 0, y: 0, z: 0.2, distance: 20, pitch: BOARD_PITCH };
 
   constructor(host: HTMLElement) {
     this.renderer.shadowMap.enabled = true;
@@ -44,8 +68,13 @@ export class Stage {
     this.renderer.setAnimationLoop(() => {
       this.timer.update();
       for (const tick of this.tickers) tick(this.timer.getDelta(), this.timer.getElapsed());
-      this.renderer.render(this.scene, this.camera);
+      this.renderer.render(this.view?.scene ?? this.scene, this.view?.camera ?? this.camera);
     });
+  }
+
+  show(view: StageView | null) {
+    this.view = view;
+    this.fit();
   }
 
   onTick(tick: (delta: number, elapsed: number) => void) {
@@ -54,18 +83,48 @@ export class Stage {
 
   frameBoard(width: number, height: number) {
     this.boardSpan = Math.max(width, height * 1.1) + 2;
+    this.focused = false;
+    gsap.killTweensOf(this.pose);
     this.fit();
+  }
+
+  /** Frames the whole board; on portrait phones as well as desktop. */
+  private boardPose(): CameraPose {
+    const distance = (this.boardSpan * 1.9) / Math.min(1, this.camera.aspect) + 3;
+    return { x: 0, y: 0, z: 0.2, distance, pitch: BOARD_PITCH };
+  }
+
+  private applyPose() {
+    const { x, y, z, distance, pitch } = this.pose;
+    this.camera.position.set(x, y + distance * Math.sin(pitch), z + distance * Math.cos(pitch));
+    this.camera.lookAt(x, y, z);
+    this.camera.updateProjectionMatrix();
+  }
+
+  private moveCamera(to: CameraPose) {
+    gsap.killTweensOf(this.pose);
+    gsap.to(this.pose, { ...to, duration: 0.7, ease: 'power2.inOut', onUpdate: () => this.applyPose() });
+  }
+
+  /** Eases in on a point in the level, leaving the lower screen free for the HUD. */
+  focusOn(target: THREE.Vector3) {
+    this.focused = true;
+    const distance = FOCUS_DISTANCE / Math.min(1, this.camera.aspect * 1.1);
+    this.moveCamera({ x: target.x, y: target.y + FOCUS_RISE, z: target.z + FOCUS_DROP, distance, pitch: FOCUS_PITCH });
+  }
+
+  releaseFocus() {
+    this.focused = false;
+    this.moveCamera(this.boardPose());
   }
 
   private fit() {
     const { innerWidth, innerHeight } = window;
     this.renderer.setSize(innerWidth, innerHeight);
     this.camera.aspect = innerWidth / innerHeight;
-    // Keep the whole board in view on portrait phones as well as desktop.
-    const distance = (this.boardSpan * 1.9) / Math.min(1, this.camera.aspect) + 3;
-    this.camera.position.set(0, distance * 0.82, distance * 0.57);
-    this.camera.lookAt(0, 0, 0.2);
-    this.camera.updateProjectionMatrix();
+    if (!this.focused) Object.assign(this.pose, this.boardPose());
+    this.applyPose();
+    this.view?.fit(this.camera.aspect);
   }
 
   shake(strength = 0.12) {
@@ -78,18 +137,28 @@ export class Stage {
   }
 
   addSkyDecor(assets: Assets) {
-    for (let i = 0; i < 12; i++) {
+    const CLOUDS = 150;
+    const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
+    for (let i = 0; i < CLOUDS; i++) {
+      const angle = i * GOLDEN_ANGLE;
+      // An ellipse matching the widescreen view.
+      const spread = 0.45 + 0.8 * Math.sqrt(i / CLOUDS);
+      const x = Math.cos(angle) * spread * 44;
+      const z = Math.sin(angle) * spread * 30;
+      // Gaps in the board must show open sky, or a hole could pass for a white tile.
+      if (Math.abs(x) < 15 && Math.abs(z) < 12) continue;
       const cloud = assets.clone('cloud');
-      const angle = (i / 12) * Math.PI * 2;
-      const radius = 22 + (i % 4) * 7;
-      const baseY = -14 - (i % 3) * 4;
-      cloud.position.set(Math.cos(angle) * radius, baseY, Math.sin(angle) * radius);
-      cloud.scale.setScalar(2 + (i % 3));
-      cloud.rotation.y = angle;
-      cloud.traverse((node) => (node.castShadow = false));
+      const baseY = -9 - (i % 6) * 3.5;
+      cloud.position.set(x, baseY, z);
+      cloud.scale.set(4 + (i % 5) * 1.8, 0.9 + (i % 3) * 0.5, 2 + (i % 3) * 0.9); // long side runs left to right
+      cloud.traverse((node) => {
+        node.castShadow = false;
+        node.receiveShadow = false;
+      });
       this.scene.add(cloud);
       this.onTick((_, elapsed) => {
-        cloud.position.y = baseY + Math.sin(elapsed * 0.4 + i) * 0.5;
+        cloud.position.y = baseY + Math.sin(elapsed * 0.4 + i) * 0.4;
+        cloud.position.x = x + Math.sin(elapsed * 0.05 + i) * 2;
       });
     }
   }

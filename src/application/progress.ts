@@ -15,14 +15,20 @@ export const SKINS = [
 
 const RARITY_WEIGHT = { common: 6, rare: 3, epic: 1 };
 
-export const CHEST_STARS = 6;
+export const CHEST_STARS = 18;
 /** The bar starts part-filled: people push harder toward a goal already under way. */
-const ENDOWED_STARS = 2;
+const ENDOWED_STARS = 6;
+const HINTS_PER_CHEST = 3;
 export const STAR_SLACK = 2;
 const MERCY_THRESHOLD = 2;
 const STARTING_HINTS = 3;
 const MAX_HINTS = 9;
 const RECENT_MEMORY = 20;
+/** Difficulty rises in waves: every so often a planned easy level, before anyone feels stuck. */
+const BREATHER_EVERY = 4;
+const BREATHER_DROP = 3;
+/** Relief only helps people under pressure: a run of perfect clears earns no easy level. */
+const NO_BREATHER_STREAK = 3;
 
 export interface Progress {
   best: Record<string, { stars: number; moves: number }>;
@@ -72,6 +78,7 @@ export const totalStars = (progress: Progress) =>
 export interface Attempt {
   moves: number;
   falls: number;
+  restarts: number;
   hinted: boolean;
 }
 
@@ -116,7 +123,7 @@ export function completeLevel(
   const clearedInZone = progress.clearedInZone + (isNewClear ? 1 : 0);
   const advance = clearedInZone >= ZONES[progress.zone].quota;
 
-  const struggled = attempt.falls >= 3 || attempt.hinted;
+  const struggled = attempt.falls >= 3 || attempt.restarts >= 2 || attempt.hinted;
   const skillDelta = stars === 3 && attempt.falls === 0 ? 1 : struggled ? -1 : 0;
 
   const next: Progress = {
@@ -135,11 +142,10 @@ export function completeLevel(
     perfectStreak,
     bestStreak: Math.max(progress.bestStreak, perfectStreak),
     chestStars: chest ? filled - CHEST_STARS : filled,
-    hints: chest ? Math.min(MAX_HINTS, progress.hints + 1) : progress.hints,
+    hints: chest ? Math.min(MAX_HINTS, progress.hints + HINTS_PER_CHEST) : progress.hints,
     skipped: progress.skipped.filter((id) => id !== level.id),
     recent: remember(progress.recent, level.id),
     skins: chest && chest !== 'bonus' ? [...progress.skins, chest.id] : progress.skins,
-    skin: chest && chest !== 'bonus' ? chest.id : progress.skin,
   };
 
   const movesOff = attempt.moves - level.par;
@@ -159,7 +165,7 @@ export function completeLevel(
 
 /**
  * Flow-channel level selection: walk the zone's difficulty-sorted levels at the player's own pace,
- * dropping back after struggles so a hard level is always followed by a breather.
+ * in waves, dropping back further after struggles.
  */
 export function pickNextLevel(progress: Progress, levels: readonly LevelData[] = LEVELS): LevelData {
   const zoneLevels = [...levelsInZone(progress.zone, levels)].sort((a, b) => a.difficulty - b.difficulty);
@@ -171,8 +177,17 @@ export function pickNextLevel(progress: Progress, levels: readonly LevelData[] =
   const rested = candidates.filter((level) => !progress.recent.includes(level.id));
   const pool = rested.length ? rested : zoneLevels.filter((level) => level.id !== progress.recent.at(-1));
 
-  const target =
-    progress.clearedInZone + progress.skill - (progress.struggles >= MERCY_THRESHOLD ? 2 : 0);
+  // A zone only asks for `quota` clears, so each clear walks a proportional stretch of its whole curve.
+  const { quota } = ZONES[progress.zone];
+  const stride = Number.isFinite(quota) ? zoneLevels.length / quota : 1;
+  const breather =
+    progress.clearedInZone % BREATHER_EVERY === BREATHER_EVERY - 1 && progress.perfectStreak < NO_BREATHER_STREAK;
+  const steps =
+    progress.clearedInZone +
+    progress.skill -
+    (progress.struggles >= MERCY_THRESHOLD ? 2 : 0) -
+    (breather ? BREATHER_DROP : 0);
+  const target = Math.round(steps * stride);
   const reference = zoneLevels[Math.max(0, Math.min(target, zoneLevels.length - 1))].difficulty;
   return pool.reduce((closest, level) =>
     Math.abs(level.difficulty - reference) < Math.abs(closest.difficulty - reference) ? level : closest,

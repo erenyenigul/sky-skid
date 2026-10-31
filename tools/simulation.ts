@@ -47,28 +47,27 @@ function playLevel(persona: Persona, level: LevelData, hintsLeft: number, random
   const board = boardOf(level);
   const session = new LevelSession(board);
   const budget = Math.ceil(level.par * persona.attemptBudget) + 2;
-  let restarts = 0;
   let seconds = 0;
   let seen = new Set<string>();
 
   while (!session.won) {
     if (session.moves >= budget || session.isStuck) {
-      restarts++;
       session.restart();
       seen = new Set();
-      if (restarts >= persona.hintAfter + 4 || (restarts >= persona.hintAfter && hintsLeft === 0)) {
-        return { attempt: session.attempt, restarts, seconds, gaveUp: true, frustration: session.falls * persona.frustrationPerFall };
-      }
     }
-    const usingHint = restarts >= persona.hintAfter && hintsLeft > 0;
+    const failures = session.restarts + session.falls; // a fall also ends the attempt
+    if (failures >= persona.hintAfter + 4 || (failures >= persona.hintAfter && hintsLeft === 0)) {
+      return { attempt: session.attempt, restarts: session.restarts, seconds, gaveUp: true, frustration: session.falls * persona.frustrationPerFall };
+    }
+    const usingHint = failures >= persona.hintAfter;
     const direction = usingHint
       ? session.hint()!
       : chooseMove(persona, board, session.state, seen, random);
-    session.dash(direction);
+    if (session.dash(direction).outcome === 'fell') seen = new Set();
     seen.add(`${session.state.at}:${session.state.coins}:${session.state.cracked}`);
     seconds += persona.secondsPerMove;
   }
-  return { attempt: session.attempt, restarts, seconds, gaveUp: false, frustration: session.falls * persona.frustrationPerFall };
+  return { attempt: session.attempt, restarts: session.restarts, seconds, gaveUp: false, frustration: session.falls * persona.frustrationPerFall };
 }
 
 export interface SessionResult {

@@ -1,10 +1,10 @@
-import { writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import seedrandom from 'seedrandom';
 import type { LevelData } from '../src/application/catalog';
-import { parseBoard, type Board } from '../src/domain/board';
-import { dash, DIRECTIONS, initialState, type GameState } from '../src/domain/game';
+import { parseBoard } from '../src/domain/board';
 import { solve } from '../src/domain/solver';
 import { TUTORIAL_LEVELS, ZONE_SPECS, type ZoneSpec } from './levelSpecs';
+import { measureDifficulty } from './difficulty';
 import { LevelProver } from './z3Encoding';
 
 type Random = () => number;
@@ -32,24 +32,6 @@ function randomRows(spec: ZoneSpec, random: Random): string[] {
   return Array.from({ length: size }, (_, row) => cells.slice(row * size, (row + 1) * size).join(''));
 }
 
-/** How often someone mashing random moves wins: the empirical base of the difficulty score. */
-function randomWalkWinRate(board: Board, random: Random, par: number, trials = 200) {
-  let wins = 0;
-  for (let trial = 0; trial < trials; trial++) {
-    let state: GameState = initialState(board);
-    for (let move = 0; move < par * 3; move++) {
-      const result = dash(board, state, DIRECTIONS[Math.floor(random() * 4)]);
-      if (result.outcome === 'won') wins++;
-      if (result.outcome === 'won' || result.outcome === 'fell') break;
-      state = result.state;
-    }
-  }
-  return wins / trials;
-}
-
-const difficultyOf = (par: number, winRate: number) =>
-  +(par + 2 * -Math.log10(Math.max(winRate, 1 / 400))).toFixed(2);
-
 /** Fast filter with BFS; Z3 then proves whatever survives, so a disagreement is a hard error. */
 function isCandidate(rows: string[], spec: ZoneSpec) {
   const board = parseBoard(rows);
@@ -63,9 +45,15 @@ function isCandidate(rows: string[], spec: ZoneSpec) {
   return { board, solution };
 }
 
+const PATH = 'src/data/levels.json';
+/** Quick measurements while searching; `npm run calibrate` re-measures everything afterwards. */
+const SEARCH_RUNS = 8;
+const MAX_MEASURED = 1500;
+
 const prover = await LevelProver.create();
-const random = seedrandom('sky-skid-1');
-const levels: LevelData[] = [];
+const random = seedrandom('sky-skid-2');
+// Existing levels are kept, so ids and saved progress stay valid.
+const levels: LevelData[] = existsSync(PATH) ? JSON.parse(readFileSync(PATH, 'utf8')) : [];
 
 async function admit(rows: string[], zone: number, id: string, featured: string[]) {
   const board = parseBoard(rows);
@@ -79,40 +67,51 @@ async function admit(rows: string[], zone: number, id: string, featured: string[
     zone,
     rows,
     par: proof.par,
-    difficulty: difficultyOf(proof.par, randomWalkWinRate(board, random, proof.par)),
+    difficulty: measureDifficulty({ id, rows, par: proof.par }, SEARCH_RUNS, random),
     witness: proof.witness,
   });
   return true;
 }
 
+const largestGap = (sorted: number[]) => Math.max(0, ...sorted.slice(1).map((value, i) => value - sorted[i]));
+
+/** A level earns its place by landing well inside a gap in the zone's difficulty curve. */
+function fillsGap(sorted: number[], difficulty: number) {
+  if (sorted.length < 2) return true;
+  if (difficulty < sorted[0] || difficulty > sorted.at(-1)!) return false;
+  const nearest = Math.min(...sorted.map((value) => Math.abs(value - difficulty)));
+  return nearest >= largestGap(sorted) / 3;
+}
+
 for (const [index, rows] of TUTORIAL_LEVELS.entries()) {
-  await admit(rows, 0, `t${index + 1}`, []);
+  const id = `t${index + 1}`;
+  if (!levels.some((level) => level.id === id)) await admit(rows, 0, id, []);
 }
 
 for (const spec of ZONE_SPECS) {
-  const seen = new Set<string>();
-  const perPar = Math.ceil(spec.count / (spec.par[1] - spec.par[0] + 1)) + 1;
-  const parCount = new Map<number, number>();
-  let admitted = 0;
-  for (let attempt = 0; admitted < spec.count; attempt++) {
-    if (attempt > 3_000_000) throw new Error(`Zone ${spec.zone} starved at ${admitted}/${spec.count}`);
+  const inZone = () => levels.filter((level) => level.zone === spec.zone);
+  const curve = () => inZone().map((level) => level.difficulty).sort((a, b) => a - b);
+  const seen = new Set(inZone().map((level) => level.rows.join('/')));
+  const before = largestGap(curve());
+  let nextId = levels.filter((level) => level.id.startsWith(`z${spec.zone}-`)).length + 1;
+  let measured = 0;
+
+  for (let tried = 0; inZone().length < spec.count && measured < MAX_MEASURED; tried++) {
+    if (tried > 3_000_000) throw new Error(`Zone ${spec.zone} starved at ${inZone().length}/${spec.count}`);
     const rows = randomRows(spec, random);
     const key = rows.join('/');
     if (seen.has(key)) continue;
     seen.add(key);
     const candidate = isCandidate(rows, spec);
     if (!candidate) continue;
-    // Keep the par spread even, otherwise short levels crowd out the long ones.
-    const par = candidate.solution.length;
-    if ((parCount.get(par) ?? 0) >= perPar) continue;
-    if (await admit(rows, spec.zone, `z${spec.zone}-${admitted + 1}`, spec.featured)) {
-      parCount.set(par, (parCount.get(par) ?? 0) + 1);
-      admitted++;
-    }
+    measured++;
+    const id = `z${spec.zone}-${nextId}`;
+    const difficulty = measureDifficulty({ id: key, rows, par: candidate.solution.length }, SEARCH_RUNS, random);
+    if (fillsGap(curve(), difficulty) && (await admit(rows, spec.zone, id, spec.featured))) nextId++;
   }
-  console.log(`zone ${spec.zone}: ${admitted} levels, par spread`, Object.fromEntries(parCount));
+  console.log(`zone ${spec.zone}: ${inZone().length}/${spec.count} levels, largest gap ${before.toFixed(2)} -> ${largestGap(curve()).toFixed(2)}`);
+  writeFileSync(PATH, `${JSON.stringify(levels, null, 1)}\n`);
 }
 
-writeFileSync('src/data/levels.json', `${JSON.stringify(levels, null, 1)}\n`);
 console.log(`Wrote ${levels.length} proven levels`);
 process.exit(0);

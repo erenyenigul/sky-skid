@@ -1,13 +1,15 @@
 import * as THREE from 'three/webgpu';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import gsap from 'gsap';
 import type { Board } from '../../domain/board';
 import { hasCoin, isCracked, type GameState } from '../../domain/game';
 import type { Assets } from './assets';
 import type { Stage } from './stage';
 
-const PAD_HEIGHT = 0.5;
-const PAD_SCALE = 0.205;
-const TILE_TOP = 0.12;
+const TILE_HEIGHT = 0.6;
+const RIM_BASE = -0.12;
+const tileGeometry = new RoundedBoxGeometry(0.98, TILE_HEIGHT, 0.98, 3, 0.07);
+const tileMaterials = ['#6f83cf', '#6274c0'].map((color) => new THREE.MeshStandardMaterial({ color, roughness: 0.9 }));
 
 export const cellPosition = (board: Board, cell: number, y = 0) =>
   new THREE.Vector3(
@@ -61,10 +63,12 @@ export class BoardView {
         tileGroup.add(model);
         this.crumbles.set(cell, { model: tileGroup, gone: false });
       } else {
-        const model = this.assets.clone('platform-grass-large-round');
-        model.scale.set(PAD_SCALE, TILE_TOP / PAD_HEIGHT, PAD_SCALE);
-        model.position.y = -TILE_TOP;
-        tileGroup.add(model);
+        const parity = ((cell % board.width) + Math.floor(cell / board.width)) % 2;
+        const slab = new THREE.Mesh(tileGeometry, tileMaterials[parity]);
+        slab.position.y = -TILE_HEIGHT / 2;
+        slab.receiveShadow = true;
+        slab.castShadow = true;
+        tileGroup.add(slab);
       }
       this.decorate(tileGroup, tile, cell);
       this.addAnimated(tileGroup, (cell % board.width) + Math.floor(cell / board.width));
@@ -74,7 +78,7 @@ export class BoardView {
       for (let x = -1; x <= board.width; x++) {
         if (x >= 0 && y >= 0 && x < board.width && y < board.height) continue;
         const brick = this.assets.clone('brick');
-        brick.position.set(x - (board.width - 1) / 2, -TILE_TOP, y - (board.height - 1) / 2);
+        brick.position.set(x - (board.width - 1) / 2, RIM_BASE, y - (board.height - 1) / 2);
         brick.scale.set(1, 0.3, 1);
         this.addAnimated(brick, Math.abs(x) + Math.abs(y));
       }
@@ -127,7 +131,7 @@ export class BoardView {
     gsap.to(object.position, { y: restY, duration: 0.42, delay: order * 0.022, ease: 'back.out(1.4)' });
   }
 
-  /** Makes the island match `state`. Safe to call after any move, undo or restart. */
+  /** Makes the island match `state`. Safe to call after any move or restart. */
   sync(state: GameState) {
     const board = this.board!;
     for (const [cell, coin] of this.coins) coin.visible = !hasCoin(state, board, cell);
@@ -155,6 +159,11 @@ export class BoardView {
     if (this.flag) {
       gsap.to(this.flag.scale, { x: open ? 1.9 : 1, y: open ? 1.9 : 0.8, z: open ? 1.9 : 1, duration: 0.25, ease: 'back.out(3)' });
     }
+  }
+
+  /** Clears the flag out of a close-up of the robot standing on it. `sync` brings it back. */
+  lowerFlag() {
+    if (this.flag) gsap.to(this.flag.scale, { x: 0, y: 0, z: 0, duration: 0.25, ease: 'back.in(2)' });
   }
 
   hideCoin(cell: number) {

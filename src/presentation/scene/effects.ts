@@ -3,8 +3,8 @@ import gsap from 'gsap';
 
 const loader = new THREE.TextureLoader();
 const textures = {
-  sparkle: loader.load('/assets/sprites/sparkle.png'),
-  puff: loader.load('/assets/sprites/particle.png'),
+  sparkle: loader.load(`${import.meta.env.BASE_URL}assets/sprites/sparkle.png`),
+  puff: loader.load(`${import.meta.env.BASE_URL}assets/sprites/particle.png`),
 };
 Object.values(textures).forEach((texture) => (texture.colorSpace = THREE.SRGBColorSpace));
 

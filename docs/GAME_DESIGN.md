@@ -13,7 +13,7 @@ You dash in a straight line until something stops you. The flag only opens once 
 | Tile | Behaviour | Teaches |
 | --- | --- | --- |
 | Brick | Stops you | Using obstacles as brakes |
-| Gap | You fall, and that dash is rewound | Checking the whole line first |
+| Gap | You fall and the level starts over | Checking the whole line first |
 | Tall grass | Stops you on the tile | Stopping mid-line |
 | Crumbling platform | Holds for one crossing | Planning order; a wrong route can lock you out |
 | Cloud pair | Warps you to the twin and stops | Non-local routes |
@@ -22,12 +22,12 @@ You dash in a straight line until something stops you. The flag only opens once 
 
 | Theory | Decision |
 | --- | --- |
-| **Fun is learning patterns; boredom is mastery** (Koster, *A Theory of Fun*) | A new rule every 7–8 levels for five zones. Each level must prove the zone's new tile is needed, so a new rule can't be ignored. |
-| **Flow: challenge tracks skill** (Csikszentmihalyi) | Level choice follows the player: perfect clears move difficulty up, struggles move it down, and repeated struggles bring an easier level. |
+| **Fun is learning patterns; boredom is mastery** (Koster, *A Theory of Fun*) | A new rule every 10–12 levels for five zones. Each level must prove the zone's new tile is needed, so a new rule can't be ignored. |
+| **Flow: challenge tracks skill** (Csikszentmihalyi) | Level choice follows the player: perfect clears move difficulty up, struggles move it down, and repeated struggles bring an easier level. Difficulty also rises in waves: every fourth level in a zone is a planned breather, skipped for anyone on a run of three or more perfect clears. |
 | **Competence and autonomy** (Self-Determination Theory) | Par is the proven minimum, so three stars means truly perfect. Players can always leave a level through a limited hint or a skip. |
-| **Frictionless failure** | Falls rewind one dash. Undo and restart are instant, with no confirmation. One buffered input keeps fast play responsive. |
+| **Frictionless failure** | A fall restarts the level at once, with no dialog in the way. Restart is instant, with no confirmation. One buffered input keeps fast play responsive. |
 | **Near-miss pull** | Finishing just over par says "only 1 move away from perfect!" and makes Retry the highlighted button. |
-| **Variable rewards** (Hopson, *Behavioral Game Design*) | Stars fill a chest that holds a random skin, weighted by rarity. |
+| **Variable rewards** (Hopson, *Behavioral Game Design*) | Stars fill a chest that holds a random skin, weighted by rarity. The chest floats down beside the robot and opens in the level itself, while the camera moves in; the robot leaps in front of the chest, it opens, and the robot turns to the player wearing the prize, and the player chooses whether to keep wearing it. |
 | **Goal gradient and endowed progress** | The chest bar starts part-filled and stays visible. |
 | **Feedback feel** | Rising pitch for coins in the same dash, landing squash, camera shake, particles. |
 | **Reason to come back** | A daily level with a day streak, the same for everyone on a given date. |
@@ -47,7 +47,7 @@ You dash in a straight line until something stops you. The flag only opens once 
 
 An independent BFS must agree with Z3 on every par. The two share `traceDash` and the rules it encodes, so a bug in those rules could get past both; unit tests cover them separately.
 
-P4 only applies to zone 1, the zone that features gaps. Soft-locks are allowed by design: crumbling platforms can make a level unwinnable, and the game detects that with BFS at runtime and tells the player to undo.
+P4 only applies to zone 1, the zone that features gaps. Soft-locks are allowed by design: crumbling platforms can make a level unwinnable, and the game detects that with BFS at runtime and lights up Hint, which restarts the level and shows the route. With no hints left, Restart lights up instead.
 
 ## Bots
 
@@ -67,10 +67,10 @@ Bots use the same `LevelSession` and progression code as the real game. On top s
 
 - Free hints let the random-move bot autoplay to the final zone, so hints became limited, with a skip as the way out.
 - Once the endless zone was used up, one level was served about 4 times per player. Replays now rotate through levels not played recently.
-- A difficulty formula based on random-walk win rate mislabelled levels, including a zone opener that Casual needed hints for 93% of the time. Difficulty now comes from the attempts Casual and Decent actually need (`npm run calibrate`).
+- A difficulty formula based on random-walk win rate mislabelled levels, including a zone opener that Casual needed hints for 93% of the time. Difficulty now comes from the attempts Casual and Decent actually need (`npm run calibrate`), and `npm run levels` only adds a level if it lands in a gap in its zone's curve.
 
 ## Known gaps
 
-- Content runs out: the endless zone has 60 levels, after which it replays them. The bots reach that point within a few sessions, so the next step is more levels.
+- Content runs out: the endless zone has up to 100 levels, after which it replays them. The bots reach that point within a few sessions, so the next step is more levels.
 - No music: the Kenney kits used here don't include any.
 - No real-player data yet. The first thing to measure is where people actually quit.

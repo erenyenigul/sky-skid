@@ -110,8 +110,6 @@ kbd {
   gap: 8px;
 }
 .row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
-.stuck-note, .hint-note { font-size: 16px; }
-.hint-note { font-size: 22px; font-weight: 800; }
 
 .toast {
   position: absolute;
@@ -181,11 +179,26 @@ kbd {
 .skin.selected { border-image-source: url('/assets/ui/yellow_panel.png'); }
 .swatch { display: block; width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--ink); }
 
+.showcase-panel {
+  position: absolute;
+  inset: auto 0 max(14px, env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+.chest-prize { width: min(460px, 100%); gap: 4px; animation: prize-in 0.4s 2s cubic-bezier(0.2, 1.6, 0.4, 1) both; }
+#hud [data-testid='chest'] { pointer-events: none; }
+.rarity { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+.rarity.rare { color: #1b7fc4; }
+.rarity.epic { color: #a01fc4; }
+@keyframes prize-in { from { transform: translateY(40px) scale(0.7); opacity: 0; } }
+
 @media (max-width: 520px) {
   .chip { min-width: 0; }
   .chip b { font-size: 16px; }
   .chip small { font-size: 11px; }
   .meter { min-width: 56px; }
-  .kenney-btn { min-width: 92px; font-size: 16px; }
+  .kenney-btn { min-width: 0; padding: 0 6px; font-size: 15px; }
+  .controls .row { flex-wrap: nowrap; gap: 4px; }
   kbd { display: none; }
 }

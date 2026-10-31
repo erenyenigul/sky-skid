@@ -68,12 +68,20 @@ describe('solver', () => {
 });
 
 describe('LevelSession', () => {
-  it('rewinds falls, supports undo and detects soft-locks', () => {
-    const session = new LevelSession(parseBoard(['S.~F']));
+  it('starts the level over after a fall', () => {
+    const board = parseBoard(['S.g~F', '.....']);
+    const session = new LevelSession(board);
     session.dash('right');
-    expect(session.falls).toBe(1);
+    expect(session.moves).toBe(1);
+    expect(session.dash('right').outcome).toBe('fell');
+    expect(session.state.at).toBe(board.start);
     expect(session.moves).toBe(0);
-    expect(session.isStuck).toBe(true);
+    expect(session.falls).toBe(1);
+    expect(session.restarts).toBe(0);
+  });
+
+  it('detects soft-locks', () => {
+    expect(new LevelSession(parseBoard(['S.~F'])).isStuck).toBe(true);
   });
 
   it('hint marks the attempt', () => {
