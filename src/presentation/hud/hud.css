@@ -1,0 +1,191 @@
+:root {
+  --ink: #33415c;
+  --accent: #e8590c;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #app, #stage { margin: 0; height: 100%; overflow: hidden; }
+
+body {
+  background: #6fb7ff;
+  color: var(--ink);
+  font-family: 'Grandstander Variable', system-ui, sans-serif;
+  font-weight: 600;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#stage { position: fixed; inset: 0; touch-action: none; }
+#stage canvas { display: block; touch-action: none; }
+#hud { position: fixed; inset: 0; pointer-events: none; }
+#hud button { pointer-events: auto; }
+
+.kenney-panel {
+  border-style: solid;
+  border-width: 12px;
+  border-image: url('/assets/ui/grey_panel.png') 12 fill / 12px stretch;
+  padding: 2px 6px;
+}
+.kenney-panel.yellow { border-image-source: url('/assets/ui/yellow_panel.png'); }
+.kenney-panel.green { border-image-source: url('/assets/ui/green_panel.png'); color: #143d14; }
+.kenney-panel.blue { border-image-source: url('/assets/ui/blue_panel.png'); }
+
+.kenney-btn {
+  min-width: 112px;
+  min-height: 46px;
+  padding: 0 14px;
+  border-style: solid;
+  border-width: 8px 8px 12px;
+  border-image: url('/assets/ui/blue_button04.png') 8 8 12 fill / 8px 8px 12px stretch;
+  background: none;
+  color: #fff;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 25%);
+  transition: transform 80ms;
+}
+.kenney-btn:hover { transform: translateY(-1px); }
+.kenney-btn:active { transform: translateY(3px); }
+.kenney-btn.green { border-image-source: url('/assets/ui/green_button04.png'); }
+.kenney-btn.yellow { border-image-source: url('/assets/ui/yellow_button04.png'); color: #5a3d00; text-shadow: none; }
+.kenney-btn.nudge { animation: pulse 0.9s infinite alternate ease-in-out; }
+.kenney-btn.grey { border-image-source: url('/assets/ui/grey_button04.png'); color: var(--ink); text-shadow: none; }
+
+kbd {
+  margin-left: 4px;
+  padding: 0 5px;
+  border-radius: 5px;
+  background: rgb(0 0 0 / 14%);
+  font: inherit;
+  font-size: 12px;
+}
+
+@keyframes pulse { to { transform: scale(1.05); } }
+
+.top-bar {
+  position: absolute;
+  inset: 12px 12px auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: start;
+}
+.top-bar > :last-child { justify-self: end; }
+.top-bar > :first-child { justify-self: start; }
+
+.chip { display: flex; flex-direction: column; gap: 2px; min-width: 104px; line-height: 1.1; }
+.chip.center { align-items: center; }
+.chip small { font-size: 13px; opacity: 0.8; }
+.chip b { font-size: 20px; font-weight: 800; }
+
+.meter { height: 12px; width: 100%; min-width: 84px; border-radius: 6px; background: #c8ccd4; overflow: hidden; }
+.meter i { display: block; height: 100%; background: #ffcc00; transition: width 400ms cubic-bezier(0.2, 1.4, 0.4, 1); }
+
+.star {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: #b9bfca;
+  clip-path: polygon(50% 0, 62% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 38% 35%);
+}
+.star.on { background: #ffc21a; }
+.star.inline { vertical-align: -2px; }
+.stars { display: inline-flex; gap: 2px; }
+.stars.big { gap: 6px; }
+.stars.big .star { width: 52px; height: 52px; animation: star-pop 360ms cubic-bezier(0.2, 1.8, 0.4, 1) backwards; }
+.stars.big .star:nth-child(2) { animation-delay: 120ms; }
+.stars.big .star:nth-child(3) { animation-delay: 240ms; }
+@keyframes star-pop { from { transform: scale(0) rotate(-40deg); } }
+
+.controls {
+  position: absolute;
+  inset: auto 12px max(14px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.stuck-note, .hint-note { font-size: 16px; }
+.hint-note { font-size: 22px; font-weight: 800; }
+
+.toast {
+  position: absolute;
+  top: 88px;
+  left: 50%;
+  width: min(460px, calc(100vw - 32px));
+  transform: translateX(-50%);
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  animation: drop-in 300ms cubic-bezier(0.2, 1.5, 0.4, 1);
+}
+@keyframes drop-in { from { transform: translate(-50%, -24px); opacity: 0; } }
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: rgb(40 50 90 / 28%);
+  animation: fade 180ms;
+}
+.scrim.light { background: rgb(255 255 255 / 12%); }
+@keyframes fade { from { opacity: 0; } }
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: min(380px, 100%);
+  max-height: 100%;
+  overflow: auto;
+  padding: 10px 14px;
+  text-align: center;
+  animation: dialog-in 260ms cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+.dialog.wide { width: min(560px, 100%); }
+.dialog p, .dialog h2 { margin: 0; }
+.dialog p { font-size: 18px; line-height: 1.25; }
+.dialog h2 { font-size: 30px; font-weight: 800; }
+.dialog > .kenney-btn { width: 100%; }
+@keyframes dialog-in { from { transform: translateY(30px) scale(0.92); opacity: 0; } }
+
+.accent { color: var(--accent); font-weight: 800; }
+.reward { width: 100%; font-size: 16px; }
+.outlined { -webkit-text-stroke: 3px var(--ink); paint-order: stroke fill; }
+
+.logo {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(56px, 13vw, 104px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 5px 0 #3f7fd6, 0 10px 18px rgb(30 60 120 / 35%);
+  transform: rotate(-3deg);
+}
+
+.skin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 6px; width: 100%; }
+.skin { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; font: inherit; color: inherit; cursor: pointer; line-height: 1.05; }
+.skin:disabled { cursor: not-allowed; opacity: 0.65; }
+.skin.selected { border-image-source: url('/assets/ui/yellow_panel.png'); }
+.swatch { display: block; width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--ink); }
+
+@media (max-width: 520px) {
+  .chip { min-width: 0; }
+  .chip b { font-size: 16px; }
+  .chip small { font-size: 11px; }
+  .meter { min-width: 56px; }
+  .kenney-btn { min-width: 92px; font-size: 16px; }
+  kbd { display: none; }
+}

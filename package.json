@@ -1,0 +1,40 @@
+{
+  "name": "sky-skid",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "levels": "tsx tools/generateLevels.ts",
+    "verify": "tsx tools/verifyLevels.ts",
+    "playtest": "tsx tools/playtest.ts",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "calibrate": "tsx tools/calibrateLevels.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/grandstander": "^5.3.0",
+    "@preact/signals": "^2.11.4",
+    "@use-gesture/vanilla": "^10.3.1",
+    "gsap": "^3.15.0",
+    "howler": "^2.2.4",
+    "preact": "^11.1.1",
+    "seedrandom": "^3.0.5",
+    "three": "^0.187.0",
+    "z3-solver": "^5.3.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@preact/preset-vite": "^2.10.6",
+    "@types/howler": "^2.2.13",
+    "@types/node": "^26.6.6",
+    "@types/seedrandom": "^3.0.8",
+    "@types/three": "^0.187.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

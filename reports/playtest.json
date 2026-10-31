@@ -1,0 +1,193 @@
+{
+ "players": 200,
+ "days": 7,
+ "seed": "playtest",
+ "rows": [
+  {
+   "bot": "Naive",
+   "lvls/session": 28,
+   "min/session": 11.8,
+   "days of 7": 1.4,
+   "3-star": "16%",
+   "falls/lvl": 3.8,
+   "hint use": "33%",
+   "gave up": "11%",
+   "quit:bored": "0%",
+   "quit:frust": "100%",
+   "quit:time": "0%"
+  },
+  {
+   "bot": "Casual",
+   "lvls/session": 35.3,
+   "min/session": 23.9,
+   "days of 7": 2.3,
+   "3-star": "22%",
+   "falls/lvl": 0.8,
+   "hint use": "22%",
+   "gave up": "2%",
+   "quit:bored": "0%",
+   "quit:frust": "47%",
+   "quit:time": "53%"
+  },
+  {
+   "bot": "Decent",
+   "lvls/session": 41.2,
+   "min/session": 27,
+   "days of 7": 3.1,
+   "3-star": "35%",
+   "falls/lvl": 0.2,
+   "hint use": "11%",
+   "gave up": "4%",
+   "quit:bored": "0%",
+   "quit:frust": "30%",
+   "quit:time": "70%"
+  },
+  {
+   "bot": "Pro",
+   "lvls/session": 48.1,
+   "min/session": 18.3,
+   "days of 7": 2.4,
+   "3-star": "64%",
+   "falls/lvl": 0,
+   "hint use": "4%",
+   "gave up": "0%",
+   "quit:bored": "58%",
+   "quit:frust": "0%",
+   "quit:time": "42%"
+  },
+  {
+   "bot": "Oracle",
+   "lvls/session": 63.1,
+   "min/session": 9.3,
+   "days of 7": 1.6,
+   "3-star": "100%",
+   "falls/lvl": 0,
+   "hint use": "0%",
+   "gave up": "0%",
+   "quit:bored": "100%",
+   "quit:frust": "0%",
+   "quit:time": "0%"
+  }
+ ],
+ "zoneReach": [
+  {
+   "bot": "Naive",
+   "First Sparks": "100%",
+   "Windy Gaps": "100%",
+   "Tall Grass": "100%",
+   "Crumble Ridge": "91%",
+   "Cloud Hop": "74%",
+   "The High Sky": "41%"
+  },
+  {
+   "bot": "Casual",
+   "First Sparks": "100%",
+   "Windy Gaps": "100%",
+   "Tall Grass": "100%",
+   "Crumble Ridge": "100%",
+   "Cloud Hop": "100%",
+   "The High Sky": "100%"
+  },
+  {
+   "bot": "Decent",
+   "First Sparks": "100%",
+   "Windy Gaps": "100%",
+   "Tall Grass": "100%",
+   "Crumble Ridge": "100%",
+   "Cloud Hop": "100%",
+   "The High Sky": "100%"
+  },
+  {
+   "bot": "Pro",
+   "First Sparks": "100%",
+   "Windy Gaps": "100%",
+   "Tall Grass": "100%",
+   "Crumble Ridge": "100%",
+   "Cloud Hop": "100%",
+   "The High Sky": "100%"
+  },
+  {
+   "bot": "Oracle",
+   "First Sparks": "100%",
+   "Windy Gaps": "100%",
+   "Tall Grass": "100%",
+   "Crumble Ridge": "100%",
+   "Cloud Hop": "100%",
+   "The High Sky": "100%"
+  }
+ ],
+ "spikes": [
+  {
+   "bot": "Casual",
+   "level": "z5-30",
+   "par": 13,
+   "plays": 36,
+   "gaveUp": 0.64,
+   "hint": 0.36,
+   "falls": 0.1
+  },
+  {
+   "bot": "Casual",
+   "level": "z5-21",
+   "par": 14,
+   "plays": 20,
+   "gaveUp": 0.85,
+   "hint": 0.15,
+   "falls": 1.2
+  },
+  {
+   "bot": "Casual",
+   "level": "z5-46",
+   "par": 9,
+   "plays": 80,
+   "gaveUp": 0.41,
+   "hint": 0.57,
+   "falls": 0.4
+  },
+  {
+   "bot": "Casual",
+   "level": "z5-11",
+   "par": 13,
+   "plays": 46,
+   "gaveUp": 0.57,
+   "hint": 0.41,
+   "falls": 0.2
+  },
+  {
+   "bot": "Decent",
+   "level": "z5-45",
+   "par": 13,
+   "plays": 489,
+   "gaveUp": 0.32,
+   "hint": 0.65,
+   "falls": 0.3
+  },
+  {
+   "bot": "Casual",
+   "level": "z5-60",
+   "par": 14,
+   "plays": 28,
+   "gaveUp": 0.75,
+   "hint": 0.21,
+   "falls": 0.2
+  },
+  {
+   "bot": "Decent",
+   "level": "z5-25",
+   "par": 14,
+   "plays": 447,
+   "gaveUp": 0.33,
+   "hint": 0.62,
+   "falls": 0.1
+  },
+  {
+   "bot": "Decent",
+   "level": "z5-22",
+   "par": 12,
+   "plays": 425,
+   "gaveUp": 0.27,
+   "hint": 0.67,
+   "falls": 0.1
+  }
+ ]
+}

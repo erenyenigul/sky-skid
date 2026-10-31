@@ -1,0 +1,3591 @@
+[
+ {
+  "id": "t1",
+  "zone": 0,
+  "rows": [
+   "S....F"
+  ],
+  "par": 1,
+  "difficulty": 1.5,
+  "witness": [
+   "right"
+  ]
+ },
+ {
+  "id": "t2",
+  "zone": 0,
+  "rows": [
+   "S.o.oF"
+  ],
+  "par": 1,
+  "difficulty": 1.5,
+  "witness": [
+   "right"
+  ]
+ },
+ {
+  "id": "t3",
+  "zone": 0,
+  "rows": [
+   "S..o",
+   "#...",
+   "#..F"
+  ],
+  "par": 2,
+  "difficulty": 2,
+  "witness": [
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z0-1",
+  "zone": 0,
+  "rows": [
+   "...F..",
+   "o#.S..",
+   "......",
+   "...#..",
+   "......",
+   ".o...."
+  ],
+  "par": 5,
+  "difficulty": 3.5,
+  "witness": [
+   "left",
+   "down",
+   "left",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z0-2",
+  "zone": 0,
+  "rows": [
+   "#.#..S",
+   ".#.#..",
+   "o.....",
+   "..#...",
+   "....#.",
+   "...F.."
+  ],
+  "par": 5,
+  "difficulty": 3.5,
+  "witness": [
+   "down",
+   "left",
+   "up",
+   "down",
+   "right"
+  ]
+ },
+ {
+  "id": "z0-3",
+  "zone": 0,
+  "rows": [
+   "#FSo.",
+   ".....",
+   "..o..",
+   "....#",
+   "#o..."
+  ],
+  "par": 5,
+  "difficulty": 3.63,
+  "witness": [
+   "down",
+   "left",
+   "up",
+   "right",
+   "left"
+  ]
+ },
+ {
+  "id": "z0-4",
+  "zone": 0,
+  "rows": [
+   ".#o..",
+   "#.S..",
+   ".F...",
+   "..#..",
+   "....."
+  ],
+  "par": 3,
+  "difficulty": 2.56,
+  "witness": [
+   "up",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z0-5",
+  "zone": 0,
+  "rows": [
+   "....o.",
+   "#...oo",
+   "......",
+   "...FS.",
+   ".....#",
+   "......"
+  ],
+  "par": 4,
+  "difficulty": 3.06,
+  "witness": [
+   "up",
+   "right",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z0-6",
+  "zone": 0,
+  "rows": [
+   "#...o",
+   "...SF",
+   ".....",
+   ".....",
+   ".#.#."
+  ],
+  "par": 3,
+  "difficulty": 2.5,
+  "witness": [
+   "right",
+   "up",
+   "down"
+  ]
+ },
+ {
+  "id": "z0-7",
+  "zone": 0,
+  "rows": [
+   "....#.",
+   ".....#",
+   "#.....",
+   "....S.",
+   "F....#",
+   "o...#."
+  ],
+  "par": 3,
+  "difficulty": 2.63,
+  "witness": [
+   "left",
+   "down",
+   "up"
+  ]
+ },
+ {
+  "id": "z0-8",
+  "zone": 0,
+  "rows": [
+   ".#.o.",
+   "#...o",
+   "..F..",
+   "#...S",
+   "#...."
+  ],
+  "par": 3,
+  "difficulty": 2.54,
+  "witness": [
+   "up",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z0-9",
+  "zone": 0,
+  "rows": [
+   "......",
+   "...#.F",
+   "....#.",
+   ".....o",
+   "#.So..",
+   "......"
+  ],
+  "par": 2,
+  "difficulty": 2.06,
+  "witness": [
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z0-10",
+  "zone": 0,
+  "rows": [
+   ".#..o",
+   ".#...",
+   ".##.S",
+   ".....",
+   "F...#"
+  ],
+  "par": 4,
+  "difficulty": 3.02,
+  "witness": [
+   "up",
+   "down",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z0-11",
+  "zone": 0,
+  "rows": [
+   "#..#.",
+   "o..oS",
+   ".....",
+   "#....",
+   ".F.o."
+  ],
+  "par": 4,
+  "difficulty": 3.17,
+  "witness": [
+   "left",
+   "right",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z0-12",
+  "zone": 0,
+  "rows": [
+   "....#",
+   "F#...",
+   "o....",
+   "o.#..",
+   "..oS#"
+  ],
+  "par": 2,
+  "difficulty": 2.02,
+  "witness": [
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z1-1",
+  "zone": 1,
+  "rows": [
+   ".#~...",
+   "..#.So",
+   ".~.o..",
+   "...#..",
+   "#~..~o",
+   ".~.F.."
+  ],
+  "par": 6,
+  "difficulty": 6.54,
+  "witness": [
+   "left",
+   "down",
+   "up",
+   "right",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z1-2",
+  "zone": 1,
+  "rows": [
+   "..#....",
+   ".S.F...",
+   ".......",
+   ".....~.",
+   ".o.....",
+   "~#.....",
+   "#....~o"
+  ],
+  "par": 6,
+  "difficulty": 4.08,
+  "witness": [
+   "down",
+   "right",
+   "down",
+   "up",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z1-3",
+  "zone": 1,
+  "rows": [
+   ".~F.~#",
+   "#.....",
+   ".....#",
+   ".#S...",
+   "..~#..",
+   ".....o"
+  ],
+  "par": 5,
+  "difficulty": 4.33,
+  "witness": [
+   "right",
+   "down",
+   "up",
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z1-4",
+  "zone": 1,
+  "rows": [
+   "o...F.o",
+   "...~...",
+   "....#..",
+   "S~.....",
+   "#....#.",
+   ".......",
+   "....~.~"
+  ],
+  "par": 3,
+  "difficulty": 2.5,
+  "witness": [
+   "up",
+   "right",
+   "left"
+  ]
+ },
+ {
+  "id": "z1-5",
+  "zone": 1,
+  "rows": [
+   "~##.o",
+   "#~~.#",
+   ".#.S~",
+   "o...#",
+   "F..o."
+  ],
+  "par": 7,
+  "difficulty": 6.42,
+  "witness": [
+   "up",
+   "right",
+   "left",
+   "down",
+   "left",
+   "up",
+   "down"
+  ]
+ },
+ {
+  "id": "z1-6",
+  "zone": 1,
+  "rows": [
+   "..o...~",
+   "..~S#.~",
+   "..#...#",
+   ".......",
+   "....~..",
+   ".......",
+   "...F.o."
+  ],
+  "par": 5,
+  "difficulty": 3.83,
+  "witness": [
+   "up",
+   "left",
+   "down",
+   "right",
+   "left"
+  ]
+ },
+ {
+  "id": "z1-7",
+  "zone": 1,
+  "rows": [
+   ".S....#",
+   "o...F..",
+   "....~..",
+   "#.#..~.",
+   ".......",
+   "..#...~",
+   "......."
+  ],
+  "par": 7,
+  "difficulty": 10.73,
+  "witness": [
+   "down",
+   "left",
+   "up",
+   "right",
+   "up",
+   "left",
+   "right"
+  ]
+ },
+ {
+  "id": "z1-8",
+  "zone": 1,
+  "rows": [
+   "##o..",
+   "~.S.o",
+   ".~F.~",
+   ".#.~.",
+   "....."
+  ],
+  "par": 4,
+  "difficulty": 3.42,
+  "witness": [
+   "right",
+   "up",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z1-9",
+  "zone": 1,
+  "rows": [
+   "~.S~~",
+   "#...#",
+   "#..o.",
+   ".#...",
+   "#~F.."
+  ],
+  "par": 7,
+  "difficulty": 4.5,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "left",
+   "right",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z1-10",
+  "zone": 1,
+  "rows": [
+   "F..o...",
+   "o...#..",
+   "....S.#",
+   "...~...",
+   "..~.o..",
+   "....##.",
+   ".#..##~"
+  ],
+  "par": 6,
+  "difficulty": 6.08,
+  "witness": [
+   "down",
+   "up",
+   "left",
+   "up",
+   "right",
+   "left"
+  ]
+ },
+ {
+  "id": "z1-11",
+  "zone": 1,
+  "rows": [
+   "...o...",
+   "#.#So..",
+   "..o....",
+   "~..#...",
+   "#.....F",
+   ".....~.",
+   ".~.~~.#"
+  ],
+  "par": 7,
+  "difficulty": 9.29,
+  "witness": [
+   "right",
+   "left",
+   "up",
+   "down",
+   "left",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z1-12",
+  "zone": 1,
+  "rows": [
+   "...F..#",
+   "....o~.",
+   ".....~.",
+   "..~S...",
+   ".....#.",
+   "...#...",
+   "......."
+  ],
+  "par": 4,
+  "difficulty": 4.81,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "left"
+  ]
+ },
+ {
+  "id": "z1-13",
+  "zone": 1,
+  "rows": [
+   "~....",
+   "....~",
+   "#~o..",
+   ".#S#.",
+   ".Foo."
+  ],
+  "par": 4,
+  "difficulty": 3.1,
+  "witness": [
+   "up",
+   "down",
+   "right",
+   "left"
+  ]
+ },
+ {
+  "id": "z1-14",
+  "zone": 1,
+  "rows": [
+   "~F....",
+   "...~#.",
+   "o..S..",
+   "...#..",
+   "...~.~",
+   "#~.#.."
+  ],
+  "par": 4,
+  "difficulty": 3.63,
+  "witness": [
+   "left",
+   "right",
+   "up",
+   "left"
+  ]
+ },
+ {
+  "id": "z1-15",
+  "zone": 1,
+  "rows": [
+   "......",
+   "~.#~.#",
+   "o.o.oS",
+   "o..~..",
+   "..#...",
+   "...F.."
+  ],
+  "par": 3,
+  "difficulty": 2.56,
+  "witness": [
+   "left",
+   "down",
+   "right"
+  ]
+ },
+ {
+  "id": "z1-16",
+  "zone": 1,
+  "rows": [
+   "...o...",
+   "...~...",
+   ".......",
+   "S..~#..",
+   "....~..",
+   ".#.F.#.",
+   "....#.."
+  ],
+  "par": 6,
+  "difficulty": 4.13,
+  "witness": [
+   "up",
+   "right",
+   "left",
+   "down",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z1-17",
+  "zone": 1,
+  "rows": [
+   "##.o.",
+   ".~~..",
+   "..#..",
+   ".So.o",
+   ".~F.."
+  ],
+  "par": 6,
+  "difficulty": 4.33,
+  "witness": [
+   "right",
+   "up",
+   "left",
+   "right",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z1-18",
+  "zone": 1,
+  "rows": [
+   "#.....",
+   "...o.#",
+   "...~.~",
+   "~#.#..",
+   "....S.",
+   "....F."
+  ],
+  "par": 7,
+  "difficulty": 7.42,
+  "witness": [
+   "up",
+   "left",
+   "down",
+   "left",
+   "up",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z2-1",
+  "zone": 2,
+  "rows": [
+   ".....g.",
+   "#.....~",
+   "..ggFS.",
+   "......~",
+   "...#...",
+   "o#.....",
+   "o..#..."
+  ],
+  "par": 8,
+  "difficulty": 6.25,
+  "witness": [
+   "left",
+   "down",
+   "left",
+   "down",
+   "up",
+   "right",
+   "right",
+   "right"
+  ]
+ },
+ {
+  "id": "z2-2",
+  "zone": 2,
+  "rows": [
+   "#..g.o",
+   ".~..g.",
+   "o...SF",
+   "...#o.",
+   "#...g.",
+   "~..~.~"
+  ],
+  "par": 7,
+  "difficulty": 5.98,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "left",
+   "down",
+   "left",
+   "right"
+  ]
+ },
+ {
+  "id": "z2-3",
+  "zone": 2,
+  "rows": [
+   ".SF...o",
+   ".......",
+   "..#....",
+   "o......",
+   "g......",
+   "~#.~.#.",
+   ".....~."
+  ],
+  "par": 5,
+  "difficulty": 3.5,
+  "witness": [
+   "down",
+   "left",
+   "up",
+   "right",
+   "left"
+  ]
+ },
+ {
+  "id": "z2-4",
+  "zone": 2,
+  "rows": [
+   ".#....",
+   ".oF...",
+   "#.#...",
+   "~~.oo.",
+   "..gS..",
+   ".#.~~."
+  ],
+  "par": 8,
+  "difficulty": 9.44,
+  "witness": [
+   "left",
+   "up",
+   "right",
+   "up",
+   "left",
+   "down",
+   "left",
+   "right"
+  ]
+ },
+ {
+  "id": "z2-5",
+  "zone": 2,
+  "rows": [
+   ".....~.",
+   ".......",
+   "#S.go.g",
+   "#F.o...",
+   ".......",
+   "#..o.~.",
+   ".o....g"
+  ],
+  "par": 8,
+  "difficulty": 5.29,
+  "witness": [
+   "right",
+   "right",
+   "left",
+   "down",
+   "up",
+   "left",
+   "down",
+   "up"
+  ]
+ },
+ {
+  "id": "z2-6",
+  "zone": 2,
+  "rows": [
+   ".og....",
+   ".....#.",
+   "F...o..",
+   "....g~#",
+   ".....~#",
+   "S...o..",
+   "#...~.."
+  ],
+  "par": 7,
+  "difficulty": 4.94,
+  "witness": [
+   "right",
+   "left",
+   "up",
+   "right",
+   "right",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z2-7",
+  "zone": 2,
+  "rows": [
+   "o.....g",
+   "...#...",
+   "F#~o...",
+   ".#...~~",
+   ".....#~",
+   "...S.#.",
+   "...g..."
+  ],
+  "par": 5,
+  "difficulty": 3.5,
+  "witness": [
+   "up",
+   "down",
+   "left",
+   "up",
+   "down"
+  ]
+ },
+ {
+  "id": "z2-8",
+  "zone": 2,
+  "rows": [
+   "...#..",
+   "..#o#.",
+   "#F.go~",
+   "#.....",
+   "..~..S",
+   "...#.."
+  ],
+  "par": 7,
+  "difficulty": 4.52,
+  "witness": [
+   "down",
+   "left",
+   "up",
+   "left",
+   "up",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z2-9",
+  "zone": 2,
+  "rows": [
+   ".#....",
+   "~.....",
+   "...So.",
+   "....##",
+   "o..~..",
+   ".g.gFo"
+  ],
+  "par": 7,
+  "difficulty": 4.69,
+  "witness": [
+   "right",
+   "left",
+   "down",
+   "right",
+   "right",
+   "right",
+   "left"
+  ]
+ },
+ {
+  "id": "z2-10",
+  "zone": 2,
+  "rows": [
+   "..o#...",
+   ".~.....",
+   "...o.g#",
+   "..F#~..",
+   "...~...",
+   "~g.....",
+   "...~#S."
+  ],
+  "par": 5,
+  "difficulty": 4.08,
+  "witness": [
+   "up",
+   "left",
+   "up",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z2-11",
+  "zone": 2,
+  "rows": [
+   "..o..o.",
+   "#......",
+   "S.g.~..",
+   ".....#F",
+   "g......",
+   "....~..",
+   "......."
+  ],
+  "par": 4,
+  "difficulty": 3,
+  "witness": [
+   "right",
+   "up",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z2-12",
+  "zone": 2,
+  "rows": [
+   "#.g.#.#",
+   ".~.F...",
+   "......#",
+   ".#S...o",
+   "#......",
+   "...o...",
+   "...g.~."
+  ],
+  "par": 5,
+  "difficulty": 3.56,
+  "witness": [
+   "right",
+   "left",
+   "down",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z2-13",
+  "zone": 2,
+  "rows": [
+   "...#...",
+   "~.~...#",
+   ".~...~.",
+   "...g.o.",
+   "...o...",
+   "..S....",
+   "..g.#F."
+  ],
+  "par": 6,
+  "difficulty": 4.65,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "right",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z2-14",
+  "zone": 2,
+  "rows": [
+   "~....~",
+   "F~.#..",
+   "g.#...",
+   "gg.~o.",
+   "o.S~.#",
+   "....o#"
+  ],
+  "par": 8,
+  "difficulty": 5.21,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "down",
+   "left",
+   "up",
+   "up",
+   "up"
+  ]
+ },
+ {
+  "id": "z2-15",
+  "zone": 2,
+  "rows": [
+   ".g#....",
+   "..~....",
+   "...#~~.",
+   "g....o.",
+   ".o...S.",
+   ".~.....",
+   "....g~F"
+  ],
+  "par": 4,
+  "difficulty": 3.35,
+  "witness": [
+   "left",
+   "up",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z2-16",
+  "zone": 2,
+  "rows": [
+   ".~.o..",
+   ".S.g..",
+   "..~...",
+   "go.F#.",
+   "..#...",
+   "#....."
+  ],
+  "par": 6,
+  "difficulty": 8.96,
+  "witness": [
+   "right",
+   "up",
+   "down",
+   "left",
+   "down",
+   "right"
+  ]
+ },
+ {
+  "id": "z2-17",
+  "zone": 2,
+  "rows": [
+   "##...F",
+   ".S...o",
+   "~o.~.~",
+   ".g.o#.",
+   "#.....",
+   "..##.."
+  ],
+  "par": 6,
+  "difficulty": 4.79,
+  "witness": [
+   "down",
+   "right",
+   "left",
+   "up",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z2-18",
+  "zone": 2,
+  "rows": [
+   "..F...",
+   "o.##..",
+   ".~..~S",
+   "..g~#o",
+   ".#....",
+   "~.#.~#"
+  ],
+  "par": 6,
+  "difficulty": 4.06,
+  "witness": [
+   "down",
+   "left",
+   "up",
+   "left",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z3-1",
+  "zone": 3,
+  "rows": [
+   "x...#..",
+   "..x...#",
+   "......g",
+   ".....#~",
+   ".##...~",
+   "Fx.o..o",
+   "#oSo..."
+  ],
+  "par": 6,
+  "difficulty": 8.98,
+  "witness": [
+   "up",
+   "right",
+   "down",
+   "left",
+   "up",
+   "left"
+  ]
+ },
+ {
+  "id": "z3-2",
+  "zone": 3,
+  "rows": [
+   ".#..xo",
+   ".~o..S",
+   "x..#x~",
+   "~#o.##",
+   "x....#",
+   "F..#.."
+  ],
+  "par": 4,
+  "difficulty": 3,
+  "witness": [
+   "up",
+   "left",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z3-3",
+  "zone": 3,
+  "rows": [
+   ".#x#..",
+   "....~.",
+   "~~..#.",
+   ".x.S.o",
+   "F...x.",
+   "...xgo"
+  ],
+  "par": 5,
+  "difficulty": 4,
+  "witness": [
+   "right",
+   "down",
+   "left",
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z3-4",
+  "zone": 3,
+  "rows": [
+   "....##",
+   "..o.F.",
+   "..Sox.",
+   "..#g~.",
+   "..g~..",
+   ".x..x~"
+  ],
+  "par": 4,
+  "difficulty": 3.33,
+  "witness": [
+   "right",
+   "up",
+   "left",
+   "right"
+  ]
+ },
+ {
+  "id": "z3-5",
+  "zone": 3,
+  "rows": [
+   "o...#..",
+   ".x.....",
+   "..x..~.",
+   "..#.#..",
+   "...xxo.",
+   "#x.oS..",
+   "....F.."
+  ],
+  "par": 7,
+  "difficulty": 7.5,
+  "witness": [
+   "left",
+   "up",
+   "left",
+   "down",
+   "right",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z3-6",
+  "zone": 3,
+  "rows": [
+   ".#..oS.",
+   ".......",
+   ".#.~oF.",
+   ".....x#",
+   "..~....",
+   "xo.....",
+   "...o.#~"
+  ],
+  "par": 8,
+  "difficulty": 9.96,
+  "witness": [
+   "down",
+   "left",
+   "down",
+   "right",
+   "up",
+   "right",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z3-7",
+  "zone": 3,
+  "rows": [
+   "..o....",
+   ".x...#x",
+   "......F",
+   "o...~..",
+   ".##.x.o",
+   ".oxS#..",
+   ".....#."
+  ],
+  "par": 5,
+  "difficulty": 3.77,
+  "witness": [
+   "left",
+   "up",
+   "right",
+   "down",
+   "up"
+  ]
+ },
+ {
+  "id": "z3-8",
+  "zone": 3,
+  "rows": [
+   "x.#x.#.",
+   ".F.....",
+   "....###",
+   ".#..#.~",
+   "o....x.",
+   "..S....",
+   ".g...o."
+  ],
+  "par": 7,
+  "difficulty": 5.85,
+  "witness": [
+   "down",
+   "right",
+   "left",
+   "left",
+   "up",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z3-9",
+  "zone": 3,
+  "rows": [
+   "#.ox.~",
+   "Fox.~.",
+   "##..x.",
+   "#.#..#",
+   "~..S.g",
+   "~.~.x."
+  ],
+  "par": 4,
+  "difficulty": 3.92,
+  "witness": [
+   "up",
+   "left",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z3-10",
+  "zone": 3,
+  "rows": [
+   "g.~~.#",
+   "#.#...",
+   "#F.x..",
+   "...#..",
+   "ox.~..",
+   "o#S~.~"
+  ],
+  "par": 9,
+  "difficulty": 7,
+  "witness": [
+   "up",
+   "left",
+   "down",
+   "left",
+   "down",
+   "up",
+   "right",
+   "up",
+   "left"
+  ]
+ },
+ {
+  "id": "z3-11",
+  "zone": 3,
+  "rows": [
+   "#....F",
+   "#g.~.#",
+   ".....#",
+   "..xSxo",
+   ".#..og",
+   "o...x."
+  ],
+  "par": 9,
+  "difficulty": 5.71,
+  "witness": [
+   "down",
+   "left",
+   "right",
+   "up",
+   "up",
+   "down",
+   "left",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z3-12",
+  "zone": 3,
+  "rows": [
+   ".x.....",
+   ".~g..#o",
+   "......x",
+   "...#...",
+   ".#....F",
+   "#..S...",
+   ".o..#.#"
+  ],
+  "par": 9,
+  "difficulty": 9.54,
+  "witness": [
+   "left",
+   "down",
+   "right",
+   "up",
+   "left",
+   "up",
+   "up",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z3-13",
+  "zone": 3,
+  "rows": [
+   ".S...x.",
+   "~....#.",
+   "F.....~",
+   "#.~#.g#",
+   "g...#.o",
+   "...##.o",
+   ".oo.xx."
+  ],
+  "par": 7,
+  "difficulty": 5.19,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "left",
+   "up",
+   "up",
+   "left"
+  ]
+ },
+ {
+  "id": "z3-14",
+  "zone": 3,
+  "rows": [
+   "#.x.S.",
+   "~....#",
+   "x.#..~",
+   ".#.x.F",
+   ".x..ox",
+   "o.#..."
+  ],
+  "par": 8,
+  "difficulty": 5.92,
+  "witness": [
+   "left",
+   "down",
+   "left",
+   "down",
+   "right",
+   "up",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z3-15",
+  "zone": 3,
+  "rows": [
+   "......",
+   ".#o..x",
+   "gxF~.#",
+   "#..#.S",
+   "...x.o",
+   "..x~o#"
+  ],
+  "par": 9,
+  "difficulty": 6.88,
+  "witness": [
+   "down",
+   "up",
+   "left",
+   "down",
+   "up",
+   "right",
+   "down",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z3-16",
+  "zone": 3,
+  "rows": [
+   "o..#..",
+   ".o.#..",
+   "....x.",
+   "..o..g",
+   "...#.~",
+   "#x..FS"
+  ],
+  "par": 6,
+  "difficulty": 4.13,
+  "witness": [
+   "left",
+   "up",
+   "left",
+   "right",
+   "down",
+   "right"
+  ]
+ },
+ {
+  "id": "z3-17",
+  "zone": 3,
+  "rows": [
+   "....#..",
+   "#o...g.",
+   "og.x.#.",
+   "x...Fx.",
+   "..#..xx",
+   "..S....",
+   "..~#..."
+  ],
+  "par": 7,
+  "difficulty": 6.21,
+  "witness": [
+   "left",
+   "up",
+   "right",
+   "up",
+   "down",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z3-18",
+  "zone": 3,
+  "rows": [
+   ".o#~.F",
+   "..g##.",
+   ".o#x.o",
+   "~S...#",
+   "x.....",
+   "....#g"
+  ],
+  "par": 6,
+  "difficulty": 4.17,
+  "witness": [
+   "up",
+   "down",
+   "right",
+   "up",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z4-1",
+  "zone": 4,
+  "rows": [
+   "~..#..g",
+   ".o..g..",
+   "..#...c",
+   "...#...",
+   "c~.....",
+   "F.~S.#.",
+   ".#..o#."
+  ],
+  "par": 8,
+  "difficulty": 5.06,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "left",
+   "right",
+   "right",
+   "down",
+   "down"
+  ]
+ },
+ {
+  "id": "z4-2",
+  "zone": 4,
+  "rows": [
+   "x#~~..",
+   "x.S.#.",
+   "~.F..c",
+   "#o..~.",
+   "#.#..#",
+   ".oc.#~"
+  ],
+  "par": 5,
+  "difficulty": 4.5,
+  "witness": [
+   "down",
+   "left",
+   "down",
+   "right",
+   "left"
+  ]
+ },
+ {
+  "id": "z4-3",
+  "zone": 4,
+  "rows": [
+   ".coo..",
+   "Sc..g.",
+   "....#.",
+   "#..#~.",
+   "#F~#..",
+   ".o~~.~"
+  ],
+  "par": 5,
+  "difficulty": 3.79,
+  "witness": [
+   "right",
+   "right",
+   "left",
+   "down",
+   "up"
+  ]
+ },
+ {
+  "id": "z4-4",
+  "zone": 4,
+  "rows": [
+   ".....#.",
+   "SF..o..",
+   "....~..",
+   "..c...#",
+   "..g#.o.",
+   "..#....",
+   "..c#..#"
+  ],
+  "par": 6,
+  "difficulty": 6.81,
+  "witness": [
+   "down",
+   "right",
+   "right",
+   "down",
+   "up",
+   "left"
+  ]
+ },
+ {
+  "id": "z4-5",
+  "zone": 4,
+  "rows": [
+   ".oc....",
+   "...~.#.",
+   "S#.....",
+   "..o....",
+   ".~..~.F",
+   "..x....",
+   ".##..c~"
+  ],
+  "par": 7,
+  "difficulty": 4.56,
+  "witness": [
+   "up",
+   "right",
+   "left",
+   "right",
+   "down",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z4-6",
+  "zone": 4,
+  "rows": [
+   "...#..",
+   "..#cg.",
+   "oc~.#~",
+   "#F#o..",
+   ".x.~.~",
+   ".#So.#"
+  ],
+  "par": 9,
+  "difficulty": 5.98,
+  "witness": [
+   "right",
+   "up",
+   "left",
+   "up",
+   "left",
+   "right",
+   "right",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z4-7",
+  "zone": 4,
+  "rows": [
+   ".~FS..o",
+   "..#ggc.",
+   "...oo..",
+   "##....~",
+   "...o~..",
+   ".~...#.",
+   "#.c.#~."
+  ],
+  "par": 9,
+  "difficulty": 10.4,
+  "witness": [
+   "down",
+   "down",
+   "left",
+   "right",
+   "left",
+   "up",
+   "right",
+   "up",
+   "left"
+  ]
+ },
+ {
+  "id": "z4-8",
+  "zone": 4,
+  "rows": [
+   "#Fo.go.",
+   ".S#....",
+   "..~.x.#",
+   "~g.~...",
+   ".....c.",
+   "##.....",
+   "#...c.o"
+  ],
+  "par": 8,
+  "difficulty": 5.17,
+  "witness": [
+   "down",
+   "down",
+   "right",
+   "right",
+   "left",
+   "up",
+   "left",
+   "left"
+  ]
+ },
+ {
+  "id": "z4-9",
+  "zone": 4,
+  "rows": [
+   ".x.#..",
+   "oc.o#~",
+   "..#...",
+   "#.gF.g",
+   "S....#",
+   ".o#c.."
+  ],
+  "par": 8,
+  "difficulty": 5.06,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "up",
+   "down",
+   "left",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z4-10",
+  "zone": 4,
+  "rows": [
+   ".#....F",
+   "......o",
+   "xoo.c..",
+   "...~.o.",
+   ".x...cS",
+   ".....g#",
+   "...#.~."
+  ],
+  "par": 7,
+  "difficulty": 4.98,
+  "witness": [
+   "up",
+   "down",
+   "left",
+   "left",
+   "right",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z4-11",
+  "zone": 4,
+  "rows": [
+   ".co.~c.",
+   "F.S..#.",
+   ".#.#.#.",
+   "...~...",
+   ".go.#..",
+   "....o.x",
+   ".#.#.o."
+  ],
+  "par": 9,
+  "difficulty": 5.73,
+  "witness": [
+   "down",
+   "up",
+   "left",
+   "right",
+   "down",
+   "left",
+   "up",
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z4-12",
+  "zone": 4,
+  "rows": [
+   ".gS.F.",
+   "o.#..#",
+   "...~c.",
+   "..#.~x",
+   "..g.x.",
+   "coo..o"
+  ],
+  "par": 7,
+  "difficulty": 4.5,
+  "witness": [
+   "left",
+   "left",
+   "down",
+   "right",
+   "down",
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z4-13",
+  "zone": 4,
+  "rows": [
+   "...##.",
+   "#xF..#",
+   "~..S..",
+   "....co",
+   "..o~..",
+   ".~..xc"
+  ],
+  "par": 8,
+  "difficulty": 7.08,
+  "witness": [
+   "right",
+   "down",
+   "up",
+   "left",
+   "up",
+   "right",
+   "down",
+   "up"
+  ]
+ },
+ {
+  "id": "z4-14",
+  "zone": 4,
+  "rows": [
+   "..g.#c",
+   ".~#c.x",
+   "...F.o",
+   ".~..~.",
+   "..o...",
+   "..o#~S"
+  ],
+  "par": 7,
+  "difficulty": 6.21,
+  "witness": [
+   "up",
+   "down",
+   "left",
+   "down",
+   "right",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z4-15",
+  "zone": 4,
+  "rows": [
+   "c......",
+   "..cxS.~",
+   "x.g#...",
+   "o......",
+   ".#...#.",
+   "....F..",
+   "....o#."
+  ],
+  "par": 4,
+  "difficulty": 3.23,
+  "witness": [
+   "left",
+   "down",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z4-16",
+  "zone": 4,
+  "rows": [
+   "#o.F#.",
+   ".g.x..",
+   "..#.S~",
+   "c.o...",
+   "......",
+   "c....."
+  ],
+  "par": 9,
+  "difficulty": 5.85,
+  "witness": [
+   "down",
+   "left",
+   "right",
+   "down",
+   "left",
+   "up",
+   "right",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z4-17",
+  "zone": 4,
+  "rows": [
+   "x..c#.",
+   "o#...~",
+   ".~..c#",
+   "o.~og.",
+   "F.g.#.",
+   "~#.S.."
+  ],
+  "par": 5,
+  "difficulty": 3.67,
+  "witness": [
+   "up",
+   "up",
+   "down",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z4-18",
+  "zone": 4,
+  "rows": [
+   "...#o.",
+   "...~.c",
+   "#.S.go",
+   "#x#...",
+   ".#c#..",
+   ".xF~#."
+  ],
+  "par": 6,
+  "difficulty": 4.83,
+  "witness": [
+   "right",
+   "up",
+   "down",
+   "right",
+   "up",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-1",
+  "zone": 5,
+  "rows": [
+   "co.#...",
+   "o~..~.#",
+   ".c...x.",
+   ".~.gx#g",
+   "....x..",
+   "gSo..~o",
+   "x.#.F.x"
+  ],
+  "par": 12,
+  "difficulty": 9.63,
+  "witness": [
+   "left",
+   "up",
+   "left",
+   "right",
+   "right",
+   "down",
+   "left",
+   "up",
+   "right",
+   "down",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z5-2",
+  "zone": 5,
+  "rows": [
+   "....S.c",
+   "...x.o.",
+   "x~~..gg",
+   "oF..#ox",
+   "..#x~.#",
+   "..#..#.",
+   ".x#ogc."
+  ],
+  "par": 13,
+  "difficulty": 12.08,
+  "witness": [
+   "down",
+   "right",
+   "down",
+   "up",
+   "up",
+   "right",
+   "left",
+   "left",
+   "up",
+   "left",
+   "down",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-3",
+  "zone": 5,
+  "rows": [
+   "..c..o#",
+   "S...#..",
+   "F..o.~~",
+   "..~..~#",
+   "...x~.~",
+   "o..##oc",
+   "gxx..xo"
+  ],
+  "par": 11,
+  "difficulty": 14.21,
+  "witness": [
+   "right",
+   "down",
+   "up",
+   "left",
+   "left",
+   "right",
+   "right",
+   "left",
+   "down",
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-4",
+  "zone": 5,
+  "rows": [
+   "~.~..o.",
+   "x.FS...",
+   "o~..x#.",
+   "o..#o#c",
+   ".....c#",
+   "...#...",
+   "#xg...o"
+  ],
+  "par": 13,
+  "difficulty": 9.15,
+  "witness": [
+   "left",
+   "down",
+   "right",
+   "down",
+   "right",
+   "up",
+   "left",
+   "up",
+   "right",
+   "down",
+   "down",
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-5",
+  "zone": 5,
+  "rows": [
+   "x.F##..",
+   "....#c.",
+   ".~#...x",
+   ".#gc..o",
+   "#~.o.#x",
+   "~S....x",
+   "gox.#.."
+  ],
+  "par": 12,
+  "difficulty": 12.17,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "down",
+   "right",
+   "left",
+   "down",
+   "up",
+   "up",
+   "left",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-6",
+  "zone": 5,
+  "rows": [
+   "..#.g.#",
+   ".#o..x.",
+   "#.S..o.",
+   ".g..F#x",
+   "~....~.",
+   ".~.c#..",
+   "oc..xx."
+  ],
+  "par": 12,
+  "difficulty": 10.25,
+  "witness": [
+   "right",
+   "up",
+   "left",
+   "down",
+   "left",
+   "down",
+   "up",
+   "left",
+   "right",
+   "up",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-7",
+  "zone": 5,
+  "rows": [
+   "o....x#",
+   "o~....#",
+   "Soo.gx.",
+   "~#x..c~",
+   "x##c..#",
+   "o....g.",
+   "~g~..F~"
+  ],
+  "par": 10,
+  "difficulty": 9.81,
+  "witness": [
+   "right",
+   "left",
+   "up",
+   "right",
+   "down",
+   "right",
+   "down",
+   "left",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-8",
+  "zone": 5,
+  "rows": [
+   "o..o.c.",
+   "..~~.F.",
+   ".....x.",
+   "~..#.#.",
+   ".o..xg.",
+   "~..cS.x",
+   "##xx~##"
+  ],
+  "par": 9,
+  "difficulty": 7.1,
+  "witness": [
+   "left",
+   "left",
+   "right",
+   "up",
+   "left",
+   "right",
+   "down",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-9",
+  "zone": 5,
+  "rows": [
+   "~.#.g.#",
+   "~.c.cx.",
+   "..x....",
+   "F~o##.g",
+   ".#.S..o",
+   "...g#.o",
+   "#.x...#"
+  ],
+  "par": 10,
+  "difficulty": 8.21,
+  "witness": [
+   "right",
+   "down",
+   "up",
+   "up",
+   "left",
+   "down",
+   "left",
+   "up",
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-10",
+  "zone": 5,
+  "rows": [
+   "..xx.o.",
+   ".#.#x..",
+   ".x.c~~g",
+   ".~cxg..",
+   "o..~..#",
+   "o...#..",
+   "SF...#."
+  ],
+  "par": 9,
+  "difficulty": 5.83,
+  "witness": [
+   "up",
+   "right",
+   "down",
+   "down",
+   "left",
+   "left",
+   "left",
+   "down",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-11",
+  "zone": 5,
+  "rows": [
+   ".xx#..##",
+   "#~.~o...",
+   ".~~~.o##",
+   "#oF...o.",
+   "..x.cc..",
+   "g...oS.~",
+   ".o....~.",
+   ".#.~#..."
+  ],
+  "par": 13,
+  "difficulty": 12.42,
+  "witness": [
+   "up",
+   "up",
+   "right",
+   "down",
+   "down",
+   "left",
+   "up",
+   "up",
+   "right",
+   "right",
+   "up",
+   "left",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-12",
+  "zone": 5,
+  "rows": [
+   "....F.x",
+   "#......",
+   "~..g.#.",
+   ".oo.cx.",
+   "~~....#",
+   ".cg...x",
+   ".#o.~So"
+  ],
+  "par": 11,
+  "difficulty": 8.69,
+  "witness": [
+   "right",
+   "up",
+   "left",
+   "left",
+   "left",
+   "right",
+   "right",
+   "down",
+   "up",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-13",
+  "zone": 5,
+  "rows": [
+   "o.....F",
+   "..oc...",
+   ".c....g",
+   ".x.o~#S",
+   ".gx.#.~",
+   "...~##~",
+   ".o~x.x."
+  ],
+  "par": 12,
+  "difficulty": 10.02,
+  "witness": [
+   "up",
+   "left",
+   "left",
+   "right",
+   "down",
+   "down",
+   "up",
+   "right",
+   "up",
+   "up",
+   "left",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-14",
+  "zone": 5,
+  "rows": [
+   ".g..o.xo",
+   "...~...c",
+   "ooc.x.o.",
+   "...S..~#",
+   ".og.F~.g",
+   ".....xx.",
+   "......##",
+   "...x..#."
+  ],
+  "par": 11,
+  "difficulty": 10.21,
+  "witness": [
+   "left",
+   "up",
+   "right",
+   "down",
+   "up",
+   "right",
+   "down",
+   "right",
+   "up",
+   "down",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-15",
+  "zone": 5,
+  "rows": [
+   "#x......",
+   ".~.x.#..",
+   ".o..F...",
+   "x~#..o..",
+   "...c~g..",
+   ".c...~~#",
+   "..#x.#~.",
+   "ogS....x"
+  ],
+  "par": 11,
+  "difficulty": 11.08,
+  "witness": [
+   "left",
+   "left",
+   "right",
+   "up",
+   "up",
+   "right",
+   "down",
+   "left",
+   "up",
+   "left",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-16",
+  "zone": 5,
+  "rows": [
+   "..S...g.",
+   "x.#~x...",
+   ".#co....",
+   "o..~~...",
+   "...oxo..",
+   "#g......",
+   "F..xc..#",
+   "g..x...."
+  ],
+  "par": 14,
+  "difficulty": 10.56,
+  "witness": [
+   "left",
+   "down",
+   "right",
+   "down",
+   "left",
+   "down",
+   "left",
+   "up",
+   "right",
+   "right",
+   "left",
+   "down",
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-17",
+  "zone": 5,
+  "rows": [
+   "o..~~.~",
+   "c.~..##",
+   "...o...",
+   "#..##gg",
+   "#o..##.",
+   "#..xo.x",
+   "oFo.c.S"
+  ],
+  "par": 11,
+  "difficulty": 6.77,
+  "witness": [
+   "up",
+   "up",
+   "left",
+   "up",
+   "up",
+   "left",
+   "up",
+   "left",
+   "down",
+   "left",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-18",
+  "zone": 5,
+  "rows": [
+   "#.#....",
+   "x....x~",
+   ".xo...#",
+   ".Fc.x~.",
+   ".~x.c.g",
+   "o.o#...",
+   ".....S."
+  ],
+  "par": 14,
+  "difficulty": 8.02,
+  "witness": [
+   "right",
+   "up",
+   "left",
+   "down",
+   "right",
+   "up",
+   "left",
+   "up",
+   "left",
+   "down",
+   "right",
+   "up",
+   "left",
+   "left"
+  ]
+ },
+ {
+  "id": "z5-19",
+  "zone": 5,
+  "rows": [
+   "o.o.S.x.",
+   ".c..g...",
+   "....x#..",
+   "oc~.x~~.",
+   "...#..#.",
+   "x...~.#g",
+   "o.#.g.#.",
+   "#.#.F..."
+  ],
+  "par": 9,
+  "difficulty": 5.77,
+  "witness": [
+   "left",
+   "down",
+   "right",
+   "up",
+   "up",
+   "right",
+   "down",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z5-20",
+  "zone": 5,
+  "rows": [
+   "..~.c..",
+   "...x...",
+   "..~.o#.",
+   "F#..x~#",
+   "S.#o...",
+   ".#.c.#o",
+   "..g.g.."
+  ],
+  "par": 11,
+  "difficulty": 7.67,
+  "witness": [
+   "down",
+   "right",
+   "right",
+   "right",
+   "up",
+   "left",
+   "down",
+   "down",
+   "left",
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-21",
+  "zone": 5,
+  "rows": [
+   "o.##~..o",
+   "c...c.x.",
+   ".oo.....",
+   ".gSg~...",
+   ".......x",
+   "...F....",
+   "....#.#.",
+   "~#o..g.."
+  ],
+  "par": 14,
+  "difficulty": 14.1,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "right",
+   "down",
+   "left",
+   "left",
+   "up",
+   "right",
+   "up",
+   "right",
+   "down",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-22",
+  "zone": 5,
+  "rows": [
+   "..~Fg.x",
+   "~.x#oo#",
+   "#...o..",
+   "#.#..x~",
+   "..#.#.g",
+   "..~#cg.",
+   "o..c.#S"
+  ],
+  "par": 12,
+  "difficulty": 16.81,
+  "witness": [
+   "up",
+   "left",
+   "down",
+   "left",
+   "left",
+   "right",
+   "right",
+   "up",
+   "left",
+   "down",
+   "up",
+   "left"
+  ]
+ },
+ {
+  "id": "z5-23",
+  "zone": 5,
+  "rows": [
+   ".c.o..#.",
+   "....cx#x",
+   "..oox.g.",
+   "~.#.#o.#",
+   "..#.....",
+   "..o.....",
+   "F#~S..#x",
+   ".......~"
+  ],
+  "par": 13,
+  "difficulty": 15.52,
+  "witness": [
+   "right",
+   "up",
+   "left",
+   "down",
+   "left",
+   "up",
+   "right",
+   "left",
+   "right",
+   "down",
+   "right",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-24",
+  "zone": 5,
+  "rows": [
+   "xx....#",
+   "..oc.S.",
+   "...o~.x",
+   ".~c#~##",
+   "...oxo#",
+   "#~.xgF~",
+   "#...##~"
+  ],
+  "par": 8,
+  "difficulty": 8.71,
+  "witness": [
+   "left",
+   "up",
+   "down",
+   "down",
+   "left",
+   "down",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-25",
+  "zone": 5,
+  "rows": [
+   "#.F#.~..",
+   "#.x.oS.#",
+   ".....x..",
+   "..#...~#",
+   "#...~...",
+   "c.x.#...",
+   "g.o.....",
+   "o..ooc.o"
+  ],
+  "par": 14,
+  "difficulty": 17.02,
+  "witness": [
+   "down",
+   "down",
+   "up",
+   "left",
+   "up",
+   "right",
+   "down",
+   "left",
+   "right",
+   "up",
+   "right",
+   "left",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-26",
+  "zone": 5,
+  "rows": [
+   "c~..~..",
+   "...x.~.",
+   ".~og..o",
+   ".#...go",
+   ".#.c.#.",
+   ".~..~#S",
+   ".xF...g"
+  ],
+  "par": 7,
+  "difficulty": 5.1,
+  "witness": [
+   "up",
+   "down",
+   "left",
+   "up",
+   "left",
+   "up",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-27",
+  "zone": 5,
+  "rows": [
+   ".#......",
+   "...x.#.g",
+   ".~oc...F",
+   "..x#~#g.",
+   "~...#...",
+   ".g.....c",
+   "..x..x~.",
+   ".o.S...o"
+  ],
+  "par": 9,
+  "difficulty": 5.69,
+  "witness": [
+   "right",
+   "up",
+   "up",
+   "left",
+   "down",
+   "left",
+   "right",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-28",
+  "zone": 5,
+  "rows": [
+   "g.......",
+   "..##..~.",
+   ".xo.xF.o",
+   "...g.~~.",
+   "....x.#.",
+   "o....g#o",
+   ".#c.~...",
+   "..S#...c"
+  ],
+  "par": 6,
+  "difficulty": 4.35,
+  "witness": [
+   "left",
+   "up",
+   "right",
+   "down",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-29",
+  "zone": 5,
+  "rows": [
+   "~...#..g",
+   ".#~~x...",
+   "....o...",
+   "x...~#.~",
+   "F....#..",
+   ".#x#...#",
+   ".c...o.S",
+   ".x.ogc.."
+  ],
+  "par": 12,
+  "difficulty": 8.81,
+  "witness": [
+   "left",
+   "up",
+   "right",
+   "up",
+   "left",
+   "down",
+   "left",
+   "down",
+   "right",
+   "right",
+   "left",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-30",
+  "zone": 5,
+  "rows": [
+   ".c...#.",
+   "~.x.~#~",
+   "...##.#",
+   "...x.x#",
+   "gcx.So.",
+   "o..#..~",
+   "#Fxoo.."
+  ],
+  "par": 13,
+  "difficulty": 12.58,
+  "witness": [
+   "up",
+   "right",
+   "down",
+   "left",
+   "up",
+   "right",
+   "left",
+   "left",
+   "down",
+   "right",
+   "up",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-31",
+  "zone": 5,
+  "rows": [
+   "..#.c...",
+   ".x#...~.",
+   ".#.....o",
+   ".#..Fx.~",
+   ".#...S#.",
+   "...g....",
+   "..co..ox",
+   ".....~#."
+  ],
+  "par": 8,
+  "difficulty": 8.38,
+  "witness": [
+   "left",
+   "up",
+   "right",
+   "up",
+   "left",
+   "right",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-32",
+  "zone": 5,
+  "rows": [
+   "#..gx..",
+   "#.~xo#~",
+   ".#~.c.S",
+   "~..~o#g",
+   ".#..g.#",
+   "~F.co..",
+   "~.~...x"
+  ],
+  "par": 10,
+  "difficulty": 8.27,
+  "witness": [
+   "left",
+   "right",
+   "left",
+   "down",
+   "up",
+   "right",
+   "left",
+   "up",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z5-33",
+  "zone": 5,
+  "rows": [
+   "..#g..#",
+   "o..#o.x",
+   "..~.o..",
+   ".cg...g",
+   "..~..~.",
+   ".~S#F.x",
+   ".oco.o."
+  ],
+  "par": 12,
+  "difficulty": 8.81,
+  "witness": [
+   "down",
+   "left",
+   "right",
+   "left",
+   "up",
+   "right",
+   "down",
+   "right",
+   "up",
+   "up",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-34",
+  "zone": 5,
+  "rows": [
+   "o.....#",
+   "~~o#xF.",
+   ".#.#...",
+   "x~c~.c.",
+   "....#~.",
+   "..o.#..",
+   ".....Sg"
+  ],
+  "par": 12,
+  "difficulty": 8.4,
+  "witness": [
+   "right",
+   "up",
+   "left",
+   "down",
+   "right",
+   "up",
+   "left",
+   "right",
+   "down",
+   "down",
+   "up",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-35",
+  "zone": 5,
+  "rows": [
+   ".~x.o.g.",
+   ".......#",
+   "...xF...",
+   "...~#...",
+   "..o...c.",
+   "~Sx#o...",
+   "g.c.o#..",
+   "g.#.xxo."
+  ],
+  "par": 10,
+  "difficulty": 7.15,
+  "witness": [
+   "right",
+   "up",
+   "right",
+   "down",
+   "right",
+   "up",
+   "down",
+   "right",
+   "up",
+   "left"
+  ]
+ },
+ {
+  "id": "z5-36",
+  "zone": 5,
+  "rows": [
+   "...c#.xo",
+   "....#g.o",
+   "#.#.....",
+   "..~.~c..",
+   ".#.g#~..",
+   "........",
+   "...F..xS",
+   ".xo.##.."
+  ],
+  "par": 9,
+  "difficulty": 9.42,
+  "witness": [
+   "up",
+   "left",
+   "down",
+   "down",
+   "down",
+   "left",
+   "down",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-37",
+  "zone": 5,
+  "rows": [
+   "#.oc~#.",
+   "#.....o",
+   ".#....F",
+   "x~...g.",
+   "~c#.~#.",
+   "x...#xx",
+   "gS#..ox"
+  ],
+  "par": 9,
+  "difficulty": 6,
+  "witness": [
+   "up",
+   "left",
+   "right",
+   "down",
+   "up",
+   "down",
+   "right",
+   "up",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-38",
+  "zone": 5,
+  "rows": [
+   "#g.o.#.",
+   "#.....c",
+   ".o...#.",
+   "x.o.x..",
+   ".#..F~.",
+   "~..oc..",
+   "#~#.Sg."
+  ],
+  "par": 7,
+  "difficulty": 6,
+  "witness": [
+   "left",
+   "up",
+   "left",
+   "down",
+   "right",
+   "up",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-39",
+  "zone": 5,
+  "rows": [
+   "oo#....~",
+   ".#....#.",
+   "...x.#.#",
+   "..g....c",
+   ".S....ox",
+   "go..F..~",
+   "c....o.x",
+   "....~.~."
+  ],
+  "par": 11,
+  "difficulty": 9.48,
+  "witness": [
+   "right",
+   "up",
+   "right",
+   "left",
+   "left",
+   "left",
+   "up",
+   "right",
+   "left",
+   "down",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-40",
+  "zone": 5,
+  "rows": [
+   "o.......",
+   "x#...F..",
+   "cSo.....",
+   "...gxc..",
+   "x.#...#.",
+   "x..#..~.",
+   "...~#...",
+   "..x~...o"
+  ],
+  "par": 6,
+  "difficulty": 4.29,
+  "witness": [
+   "right",
+   "down",
+   "up",
+   "left",
+   "down",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-41",
+  "zone": 5,
+  "rows": [
+   "##..xco",
+   ".oo##~x",
+   ".oo.x~.",
+   "#.~S.~F",
+   ".x.o~..",
+   "#...c.#",
+   "#.~g..."
+  ],
+  "par": 11,
+  "difficulty": 11.69,
+  "witness": [
+   "down",
+   "up",
+   "left",
+   "up",
+   "right",
+   "up",
+   "right",
+   "left",
+   "right",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-42",
+  "zone": 5,
+  "rows": [
+   ".#xgF..",
+   ".~g###x",
+   "#.x~c..",
+   "....~..",
+   "o.oxx..",
+   "c..g#.#",
+   "S.#o#.."
+  ],
+  "par": 14,
+  "difficulty": 10.48,
+  "witness": [
+   "up",
+   "right",
+   "left",
+   "right",
+   "down",
+   "up",
+   "left",
+   "right",
+   "down",
+   "left",
+   "down",
+   "right",
+   "up",
+   "left"
+  ]
+ },
+ {
+  "id": "z5-43",
+  "zone": 5,
+  "rows": [
+   ".o..So#~",
+   "c..#...#",
+   ".....x.x",
+   "...x.~..",
+   "xg.c#~..",
+   "#~.#o...",
+   "..~.F.g#",
+   "#......."
+  ],
+  "par": 8,
+  "difficulty": 5.42,
+  "witness": [
+   "right",
+   "left",
+   "down",
+   "up",
+   "right",
+   "down",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-44",
+  "zone": 5,
+  "rows": [
+   "#.....cg",
+   "..xF.#oo",
+   ".#...~#~",
+   "...S....",
+   "g.....c.",
+   ".#....x.",
+   "..~...#.",
+   ".o#.~..."
+  ],
+  "par": 14,
+  "difficulty": 11.96,
+  "witness": [
+   "left",
+   "down",
+   "right",
+   "down",
+   "right",
+   "left",
+   "up",
+   "left",
+   "down",
+   "right",
+   "left",
+   "up",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-45",
+  "zone": 5,
+  "rows": [
+   "Fo.x.o~",
+   "....S.~",
+   ".~.~...",
+   "...o.c.",
+   "g~##...",
+   ".gc..#.",
+   "o#ooxx#"
+  ],
+  "par": 13,
+  "difficulty": 16.67,
+  "witness": [
+   "down",
+   "left",
+   "up",
+   "left",
+   "right",
+   "down",
+   "up",
+   "up",
+   "left",
+   "down",
+   "down",
+   "up",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-46",
+  "zone": 5,
+  "rows": [
+   "...x....",
+   "#..o.x..",
+   "~~co.S..",
+   "..g.#..g",
+   "x..x...F",
+   ".....#..",
+   "#~..#c~.",
+   "#..o...."
+  ],
+  "par": 9,
+  "difficulty": 11.29,
+  "witness": [
+   "left",
+   "down",
+   "up",
+   "down",
+   "right",
+   "up",
+   "down",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-47",
+  "zone": 5,
+  "rows": [
+   "xg.o..#",
+   ".gc...F",
+   "#x~....",
+   "..#..~.",
+   "#.c..o.",
+   "~.x.xS.",
+   "..go..#"
+  ],
+  "par": 10,
+  "difficulty": 7.29,
+  "witness": [
+   "down",
+   "left",
+   "up",
+   "up",
+   "right",
+   "left",
+   "down",
+   "right",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-48",
+  "zone": 5,
+  "rows": [
+   ".F....og",
+   "x..#.#.~",
+   ".o.S.o.o",
+   "....xc.x",
+   ".#~.~..#",
+   ".....o.g",
+   "........",
+   ".x~c.o.."
+  ],
+  "par": 9,
+  "difficulty": 7.9,
+  "witness": [
+   "down",
+   "down",
+   "up",
+   "up",
+   "right",
+   "left",
+   "up",
+   "right",
+   "left"
+  ]
+ },
+ {
+  "id": "z5-49",
+  "zone": 5,
+  "rows": [
+   "....#..~",
+   "..~x...o",
+   "..o.....",
+   "..oF.o.#",
+   ".~.#.#xS",
+   "....xg..",
+   "....c~~#",
+   "c..x.~.."
+  ],
+  "par": 13,
+  "difficulty": 9.63,
+  "witness": [
+   "left",
+   "up",
+   "left",
+   "down",
+   "left",
+   "down",
+   "up",
+   "right",
+   "down",
+   "left",
+   "up",
+   "right",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-50",
+  "zone": 5,
+  "rows": [
+   "#.~..#.",
+   "...g#.~",
+   "go#x.S.",
+   ".ococx~",
+   "...#.#.",
+   "..Fg##.",
+   "~#....~"
+  ],
+  "par": 8,
+  "difficulty": 6.13,
+  "witness": [
+   "left",
+   "down",
+   "right",
+   "left",
+   "up",
+   "right",
+   "down",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-51",
+  "zone": 5,
+  "rows": [
+   "#...o#.",
+   "g......",
+   "..cg#.o",
+   "#....x#",
+   ".~...F.",
+   "~.S....",
+   ".~.cx.o"
+  ],
+  "par": 10,
+  "difficulty": 7.38,
+  "witness": [
+   "right",
+   "down",
+   "left",
+   "up",
+   "right",
+   "down",
+   "right",
+   "down",
+   "left",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-52",
+  "zone": 5,
+  "rows": [
+   "......oF",
+   "~#.c....",
+   "#.~.So.#",
+   ".xo....c",
+   "x.g~o...",
+   "..#....~",
+   "g....o.#",
+   "#..#x..o"
+  ],
+  "par": 13,
+  "difficulty": 8.69,
+  "witness": [
+   "right",
+   "down",
+   "right",
+   "left",
+   "up",
+   "right",
+   "down",
+   "left",
+   "left",
+   "down",
+   "right",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-53",
+  "zone": 5,
+  "rows": [
+   "...~~#.",
+   "..gxS..",
+   "~.x#..o",
+   "~x..##.",
+   "x#.goo.",
+   "cg.xo#c",
+   "~Fo.~.~"
+  ],
+  "par": 10,
+  "difficulty": 7.9,
+  "witness": [
+   "right",
+   "down",
+   "right",
+   "right",
+   "up",
+   "right",
+   "left",
+   "left",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z5-54",
+  "zone": 5,
+  "rows": [
+   "......c.",
+   "xc#...x#",
+   ".......~",
+   "......g~",
+   "..#.....",
+   "S....#.x",
+   "..F.~..#",
+   "#g.o..oo"
+  ],
+  "par": 10,
+  "difficulty": 7.1,
+  "witness": [
+   "right",
+   "up",
+   "right",
+   "down",
+   "right",
+   "left",
+   "up",
+   "left",
+   "down",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-55",
+  "zone": 5,
+  "rows": [
+   "x.#.S..",
+   "~x#o...",
+   "#F~.~x#",
+   ".x#g.c.",
+   ".oo..x.",
+   ".gc....",
+   "...#~#."
+  ],
+  "par": 8,
+  "difficulty": 6.17,
+  "witness": [
+   "left",
+   "down",
+   "right",
+   "up",
+   "left",
+   "up",
+   "right",
+   "up"
+  ]
+ },
+ {
+  "id": "z5-56",
+  "zone": 5,
+  "rows": [
+   "..x....",
+   ".coF##.",
+   "x.S..#.",
+   "~oox...",
+   "#.x#...",
+   ".gg.~#c",
+   ".xo..~."
+  ],
+  "par": 8,
+  "difficulty": 5.46,
+  "witness": [
+   "down",
+   "down",
+   "up",
+   "left",
+   "up",
+   "down",
+   "up",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-57",
+  "zone": 5,
+  "rows": [
+   "#....~..",
+   "....~..#",
+   "x....##.",
+   ".o##...x",
+   "...c....",
+   "x.xg.#g.",
+   "oF#~~gx.",
+   "oo#S..c~"
+  ],
+  "par": 6,
+  "difficulty": 4.5,
+  "witness": [
+   "right",
+   "left",
+   "down",
+   "right",
+   "up",
+   "down"
+  ]
+ },
+ {
+  "id": "z5-58",
+  "zone": 5,
+  "rows": [
+   ".o...gx",
+   "c.Fo..g",
+   "o#ox..x",
+   "g..#...",
+   "..~S~~x",
+   "c.#.x..",
+   "...#..."
+  ],
+  "par": 14,
+  "difficulty": 8.1,
+  "witness": [
+   "down",
+   "right",
+   "up",
+   "left",
+   "up",
+   "up",
+   "up",
+   "right",
+   "up",
+   "left",
+   "right",
+   "right",
+   "down",
+   "left"
+  ]
+ },
+ {
+  "id": "z5-59",
+  "zone": 5,
+  "rows": [
+   ".#co..~",
+   "#...x..",
+   "~.#g.#.",
+   "....S..",
+   ".~.....",
+   "o....Fc",
+   ".x....o"
+  ],
+  "par": 8,
+  "difficulty": 8.52,
+  "witness": [
+   "up",
+   "left",
+   "down",
+   "up",
+   "down",
+   "up",
+   "left",
+   "right"
+  ]
+ },
+ {
+  "id": "z5-60",
+  "zone": 5,
+  "rows": [
+   "#c.o~..#",
+   "........",
+   ".......~",
+   "......o.",
+   "x##..S..",
+   "..c.ox..",
+   ".~...x~#",
+   ".....g.F"
+  ],
+  "par": 14,
+  "difficulty": 13.5,
+  "witness": [
+   "left",
+   "up",
+   "left",
+   "left",
+   "right",
+   "down",
+   "right",
+   "down",
+   "left",
+   "down",
+   "left",
+   "down",
+   "right",
+   "right"
+  ]
+ }
+]
